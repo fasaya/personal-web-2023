@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useLocation, matchPath } from "react-router";
 
 export default function Navbar() {
 	// componentDidMount() {
@@ -12,8 +13,19 @@ export default function Navbar() {
 	// 	// 	});
 	// 	// document.querySelector("body").classList.add("loaded");
 	// }
-
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+	const navigation = [
+		{ name: "Home", href: "/", current: true },
+		{ name: "Portfolio", href: "/portfolio", current: false },
+		{ name: "Blog", href: "/blog", current: false },
+	];
+
+	const location = useLocation();
+
+	function classNames(...classes) {
+		return classes.filter(Boolean).join(" ");
+	}
 
 	return (
 		// <nav
@@ -145,37 +157,32 @@ export default function Navbar() {
 							</div>
 							<div className="hidden sm:ml-6 sm:block">
 								<div className="flex space-x-4">
-									{/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-									<a
-										href="#"
-										className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-										aria-current="page"
-									>
-										Dashboard
-									</a>
-									<a
-										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-									>
-										Team
-									</a>
-									<a
-										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-									>
-										Projects
-									</a>
-									<a
-										href="#"
-										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-									>
-										Calendar
-									</a>
+									{/* Current: "bg-gray-900 text-white",
+									 Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+									{navigation.map((item) => (
+										<NavLink
+											key={item.name}
+											className={classNames(
+												matchPath(
+													{ path: item.href },
+													location.pathname
+												)
+													? // true
+													  "bg-gray-900 text-white"
+													: "text-gray-300 hover:bg-gray-700 hover:text-white",
+												"px-3 py-2 rounded-md text-sm font-medium"
+											)}
+											to={item.href}
+										>
+											{item.name}
+										</NavLink>
+									))}
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				{/* Mobile menu, show/hide based on menu state. */}
 				<div
 					className={isMobileMenuOpen ? "block" : "hidden"}
@@ -183,31 +190,25 @@ export default function Navbar() {
 				>
 					<div className="space-y-1 px-2 pt-2 pb-3">
 						{/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-						<a
-							href="#"
-							className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-							aria-current="page"
-						>
-							Dashboard
-						</a>
-						<a
-							href="#"
-							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>
-							Team
-						</a>
-						<a
-							href="#"
-							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>
-							Projects
-						</a>
-						<a
-							href="#"
-							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-						>
-							Calendar
-						</a>
+						{navigation.map((item) => (
+							<NavLink
+								key={item.name}
+								className={classNames(
+									matchPath(
+										{ path: item.href },
+										location.pathname
+									)
+										? // true
+										  "bg-gray-900 text-white"
+										: "text-gray-300 hover:bg-gray-700 hover:text-white",
+									"block px-3 py-2 rounded-md text-base font-medium"
+								)}
+								to={item.href}
+								onClick={() => setMobileMenuOpen(false)}
+							>
+								{item.name}
+							</NavLink>
+						))}
 					</div>
 				</div>
 			</nav>
