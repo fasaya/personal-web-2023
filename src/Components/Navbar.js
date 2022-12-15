@@ -108,7 +108,10 @@ export default function Navbar() {
 									Heroicon name: outline/bars-3 
 									Menu open: "hidden", Menu closed: "block" */}
 								<svg
-									className="block h-6 w-6"
+									className={classNames(
+										!isMobileMenuOpen ? "block" : "hidden",
+										"h-6 w-6"
+									)}
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -126,7 +129,10 @@ export default function Navbar() {
 									Heroicon name: outline/x-mark 
 									Menu open: "block", Menu closed: "hidden" */}
 								<svg
-									className="hidden h-6 w-6"
+									className={classNames(
+										isMobileMenuOpen ? "block" : "hidden",
+										"h-6 w-6"
+									)}
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
