@@ -6,7 +6,7 @@ function App() {
 		<>
 			<Navbar />
 
-			{/* <div className="w-full px-4 mx-auto max-w-8xl">
+			<div className="w-full px-4 mx-auto max-w-8xl">
 				<div className="lg:flex">
 					<div
 						className="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/60"
@@ -69,6 +69,69 @@ function App() {
 										the Meta (formerly Facebook) company.
 									</p>
 									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<p>
+										React is one of the most popular
+										front-end libraries in the world used by
+										websites such as Facebook, Instagram,
+										Yahoo Mail, Dropbox, and more built by
+										the Meta (formerly Facebook) company.
+									</p>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<h1>Hai</h1>
+									<p>
 										Coupled with Tailwind CSS and the React
 										components from Flowbite you will be
 										able to develop applications faster than
@@ -110,7 +173,7 @@ function App() {
 						</div>
 					</main>
 				</div>
-			</div> */}
+			</div>
 
 			<Routeses />
 		</>
