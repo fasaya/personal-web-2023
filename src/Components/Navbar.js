@@ -1,177 +1,216 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-class Navbar extends React.Component {
-	// const [isOpen, setOpen] = useState(false);
+export default function Navbar() {
+	// componentDidMount() {
+	// 	// document
+	// 	// 	.querySelector(".preloader .pre-inner")
+	// 	// 	.fadeOut(800, function () {
+	// 	// 		/* Preload hide */
+	// 	// 		document.querySelector(".preloader").fadeOut();
+	// 	// 		document.querySelector("body").classList.add("loaded");
+	// 	// 	});
+	// 	// document.querySelector("body").classList.add("loaded");
+	// }
 
-	componentDidMount() {
-		// document
-		// 	.querySelector(".preloader .pre-inner")
-		// 	.fadeOut(800, function () {
-		// 		/* Preload hide */
-		// 		document.querySelector(".preloader").fadeOut();
-		// 		document.querySelector("body").classList.add("loaded");
-		// 	});
-		// document.querySelector("body").classList.add("loaded");
-	}
+	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-	render() {
-		return (
-			// <nav
-			// 	className="navbar is-primary"
-			// 	role="navigation"
-			// 	aria-label="main navigation"
-			// >
-			// 	<div className="container">
-			// 		<div className="navbar-brand">
-			// 			<a
-			// 				role="button"
-			// 				className={`navbar-burger burger ${
-			// 					isOpen && "is-active"
-			// 				}`}
-			// 				aria-label="menu"
-			// 				aria-expanded="false"
-			// 				onClick={() => setOpen(!isOpen)}
-			// 			>
-			// 				<span aria-hidden="true"></span>
-			// 				<span aria-hidden="true"></span>
-			// 				<span aria-hidden="true"></span>
-			// 			</a>
-			// 		</div>
+	return (
+		// <nav
+		// 	className="navbar is-primary"
+		// 	role="navigation"
+		// 	aria-label="main navigation"
+		// >
+		// 	<div className="container">
+		// 		<div className="navbar-brand">
+		// 			<a
+		// 				role="button"
+		// 				className={`navbar-burger burger ${
+		// 					isOpen && "is-active"
+		// 				}`}
+		// 				aria-label="menu"
+		// 				aria-expanded="false"
+		// 				onClick={() => setOpen(!isOpen)}
+		// 			>
+		// 				<span aria-hidden="true"></span>
+		// 				<span aria-hidden="true"></span>
+		// 				<span aria-hidden="true"></span>
+		// 			</a>
+		// 		</div>
 
-			// 		<div className={`navbar-menu ${isOpen && "is-active"}`}>
-			// 			<div className="navbar-start">
-			// 				<NavLink
-			// 					className="navbar-item"
-			// 					activeClassName="is-active"
-			// 					to="/"
-			// 				>
-			// 					Home
-			// 				</NavLink>
+		// 		<div className={`navbar-menu ${isOpen && "is-active"}`}>
+		// 			<div className="navbar-start">
+		// 				<NavLink
+		// 					className="navbar-item"
+		// 					activeClassName="is-active"
+		// 					to="/"
+		// 				>
+		// 					Home
+		// 				</NavLink>
 
-			// 				<NavLink
-			// 					className="navbar-item"
-			// 					activeClassName="is-active"
-			// 					to="/blog"
-			// 				>
-			// 					Blog
-			// 				</NavLink>
+		// 				<NavLink
+		// 					className="navbar-item"
+		// 					activeClassName="is-active"
+		// 					to="/blog"
+		// 				>
+		// 					Blog
+		// 				</NavLink>
 
-			// 				<NavLink
-			// 					className="navbar-item"
-			// 					activeClassName="is-active"
-			// 					to="/portfolio"
-			// 				>
-			// 					Portfolio
-			// 				</NavLink>
-			// 			</div>
+		// 				<NavLink
+		// 					className="navbar-item"
+		// 					activeClassName="is-active"
+		// 					to="/portfolio"
+		// 				>
+		// 					Portfolio
+		// 				</NavLink>
+		// 			</div>
 
-			// 			<div className="navbar-end">
-			// 				<div className="navbar-item">
-			// 					<div className="buttons">
-			// 						<a className="button is-white">Log in</a>
-			// 					</div>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </nav>
+		// 			<div className="navbar-end">
+		// 				<div className="navbar-item">
+		// 					<div className="buttons">
+		// 						<a className="button is-white">Log in</a>
+		// 					</div>
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </nav>
 
-			<>
-				<nav
-					className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600
-
-				"
-				>
-					<div className="container flex flex-wrap items-center justify-between mx-auto">
-						<a
-							href="https://flowbite.com/"
-							className="flex items-center"
-						>
-							<img
-								src="https://flowbite.com/docs/images/logo.svg"
-								className="h-6 mr-3 sm:h-9"
-								alt="Flowbite Logo"
-							/>
-							<span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-								Flowbite
-							</span>
-						</a>
-						<div className="flex md:order-2">
+		<>
+			<nav className="bg-gray-800">
+				<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+					<div className="relative flex h-16 items-center justify-between">
+						<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+							{/* Mobile menu button*/}
 							<button
 								type="button"
-								className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-							>
-								Get started
-							</button>
-							<button
-								data-collapse-toggle="navbar-sticky"
-								type="button"
-								className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-								aria-controls="navbar-sticky"
+								className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+								aria-controls="mobile-menu"
 								aria-expanded="false"
+								onClick={() =>
+									setMobileMenuOpen(!isMobileMenuOpen)
+								}
 							>
 								<span className="sr-only">Open main menu</span>
+								{/* Icon when menu is closed. 
+									Heroicon name: outline/bars-3 
+									Menu open: "hidden", Menu closed: "block" */}
 								<svg
-									className="w-6 h-6"
-									aria-hidden="true"
-									fill="currentColor"
-									viewBox="0 0 20 20"
+									className="block h-6 w-6"
 									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									strokeWidth="1.5"
+									stroke="currentColor"
+									aria-hidden="true"
 								>
 									<path
-										fillRule="evenodd"
-										d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-										clipRule="evenodd"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+									/>
+								</svg>
+								{/* Icon when menu is open. 
+									Heroicon name: outline/x-mark 
+									Menu open: "block", Menu closed: "hidden" */}
+								<svg
+									className="hidden h-6 w-6"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									strokeWidth="1.5"
+									stroke="currentColor"
+									aria-hidden="true"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M6 18L18 6M6 6l12 12"
 									/>
 								</svg>
 							</button>
 						</div>
-						<div
-							className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-							id="navbar-sticky"
-						>
-							<ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-								<li>
+						<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+							<div className="flex flex-shrink-0 items-center">
+								<img
+									className="block h-8 w-auto lg:hidden"
+									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+									alt="Your Company"
+								/>
+								<img
+									className="hidden h-8 w-auto lg:block"
+									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+									alt="Your Company"
+								/>
+							</div>
+							<div className="hidden sm:ml-6 sm:block">
+								<div className="flex space-x-4">
+									{/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 									<a
 										href="#"
-										className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+										className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
 										aria-current="page"
 									>
-										Home
+										Dashboard
 									</a>
-								</li>
-								<li>
 									<a
 										href="#"
-										className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										About
+										Team
 									</a>
-								</li>
-								<li>
 									<a
 										href="#"
-										className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Services
+										Projects
 									</a>
-								</li>
-								<li>
 									<a
 										href="#"
-										className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+										className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 									>
-										Contact
+										Calendar
 									</a>
-								</li>
-							</ul>
+								</div>
+							</div>
 						</div>
 					</div>
-				</nav>
-			</>
-		);
-	}
+				</div>
+				{/* Mobile menu, show/hide based on menu state. */}
+				<div
+					className={isMobileMenuOpen ? "block" : "hidden"}
+					id="mobile-menu"
+				>
+					<div className="space-y-1 px-2 pt-2 pb-3">
+						{/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+						<a
+							href="#"
+							className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+							aria-current="page"
+						>
+							Dashboard
+						</a>
+						<a
+							href="#"
+							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>
+							Team
+						</a>
+						<a
+							href="#"
+							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>
+							Projects
+						</a>
+						<a
+							href="#"
+							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>
+							Calendar
+						</a>
+					</div>
+				</div>
+			</nav>
+		</>
+	);
 }
-
-export default Navbar;
