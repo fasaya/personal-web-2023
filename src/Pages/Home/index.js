@@ -1,6 +1,6 @@
 import React from "react";
 import Typed from "react-typed";
-import About from "../Components/Home/About";
+import About from "./About";
 
 const textLines = [
 	`&lt;h1&gt;Web Developer&lt;/h1&gt;`,
