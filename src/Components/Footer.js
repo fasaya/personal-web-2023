@@ -15,46 +15,49 @@ export default function Footer() {
 	return (
 		<footer className="bg-custom-grey">
 			<div className="soc">
-				<NavLink to="https://github.com/fasaya">
+				<a target="_blank" href="https://github.com/fasaya">
 					<LogoGithub
 						color={"#f0f0f0"}
 						className="text-custom-grey-light"
 						height="25px"
 						width="25px"
 					/>
-				</NavLink>
-				<NavLink to="https://twitter.com/fasayaym">
+				</a>
+				<a target="_blank" href="https://twitter.com/fasayaym">
 					<LogoTwitter
 						color={"#f0f0f0"}
 						className="text-custom-grey-light"
 						height="25px"
 						width="25px"
 					/>
-				</NavLink>
-				<NavLink to="#">
+				</a>
+				<a target="_blank" href="#">
 					<LogoDiscord
 						color={"#f0f0f0"}
 						className="text-custom-grey-light"
 						height="25px"
 						width="25px"
 					/>
-				</NavLink>
-				<NavLink to="https://www.linkedin.com/in/andi-fasaya-yaqhsya-ma-ruf-77a422131">
+				</a>
+				<a
+					target="_blank"
+					href="https://www.linkedin.com/in/andi-fasaya-yaqhsya-ma-ruf-77a422131"
+				>
 					<LogoLinkedin
 						color={"#f0f0f0"}
 						className="text-custom-grey-light"
 						height="25px"
 						width="25px"
 					/>
-				</NavLink>
-				<NavLink to="https://instagram.com/fasaya">
+				</a>
+				<a target="_blank" href="https://instagram.com/fasaya">
 					<LogoInstagram
 						color={"#f0f0f0"}
 						className="text-custom-grey-light"
 						height="25px"
 						width="25px"
 					/>
-				</NavLink>
+				</a>
 			</div>
 			<div className="text-custom-grey-light">
 				© {year} Fasaya. All rights reserved.
