@@ -96,7 +96,7 @@ export default function Navbar() {
 							{/* Mobile menu button*/}
 							<button
 								type="button"
-								className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+								className="inline-flex items-center justify-center rounded-md p-2 ml-3 text-gray-400 hover:text-custom-orange-1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 								aria-controls="mobile-menu"
 								aria-expanded="false"
 								onClick={() =>
@@ -148,9 +148,9 @@ export default function Navbar() {
 								</svg>
 							</button>
 						</div>
-						<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+						<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
 							<div className="flex flex-shrink-0 items-center">
-								<img
+								{/* <img
 									className="block h-8 w-auto lg:hidden"
 									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
 									alt="Your Company"
@@ -159,12 +159,12 @@ export default function Navbar() {
 									className="hidden h-8 w-auto lg:block"
 									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
 									alt="Your Company"
-								/>
+								/> */}
 							</div>
 							<div className="hidden sm:ml-6 sm:block">
 								<div className="flex space-x-4">
-									{/* Current: "bg-gray-900 text-white",
-									 Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+									{/* Current: "text-custom-orange-1",
+									 Default: "text-gray-300 hover:text-custom-orange-1" */}
 									{navigation.map((item) => (
 										<NavLink
 											key={item.name}
@@ -174,8 +174,8 @@ export default function Navbar() {
 													location.pathname
 												)
 													? // true
-													  "bg-gray-900 text-white"
-													: "text-gray-300 hover:bg-gray-700 hover:text-white",
+													  "text-custom-orange-1"
+													: "text-gray-300 hover:text-custom-orange-1",
 												"px-3 py-2 rounded-md text-sm font-medium"
 											)}
 											to={item.href}
@@ -195,7 +195,7 @@ export default function Navbar() {
 					id="mobile-menu"
 				>
 					<div className="space-y-1 px-2 pt-2 pb-3">
-						{/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
+						{/* Current: "text-custom-orange-1", Default: "text-gray-300 hover:text-custom-orange-1" */}
 						{navigation.map((item) => (
 							<NavLink
 								key={item.name}
@@ -205,8 +205,8 @@ export default function Navbar() {
 										location.pathname
 									)
 										? // true
-										  "bg-gray-900 text-white"
-										: "text-gray-300 hover:bg-gray-700 hover:text-white",
+										  "text-custom-orange-1"
+										: "text-gray-300 hover:text-custom-orange-1",
 									"block px-3 py-2 rounded-md text-base font-medium"
 								)}
 								to={item.href}

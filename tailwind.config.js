@@ -13,6 +13,9 @@ module.exports = {
 					DEFAULT: "#31313a",
 					dark: "#26262d",
 				},
+				"custom-orange": {
+					1: "#f26b38",
+				},
 			},
 		},
 	},

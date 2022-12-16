@@ -135,3 +135,6 @@ a.btn:hover,
 	border: 1px solid #f26b38;
 }
 
+a.nav-menu.active {
+	color: #f26b38;
+}
