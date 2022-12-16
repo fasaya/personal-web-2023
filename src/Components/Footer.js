@@ -59,7 +59,7 @@ export default function Footer() {
 					/>
 				</a>
 			</div>
-			<div className="text-custom-grey-light">
+			<div className="text-custom-grey-light text-center sm:text-left footer-copyright">
 				© {year} Fasaya. All rights reserved.
 			</div>
 			<div className="clr" />
