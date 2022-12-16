@@ -78,7 +78,7 @@ export default function Navbar() {
 								</svg>
 							</button>
 						</div>
-						<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+						<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
 							<div className="flex flex-shrink-0 items-center">
 								{/* <img
 									className="block h-8 w-auto lg:hidden"
