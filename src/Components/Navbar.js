@@ -3,16 +3,6 @@ import { NavLink } from "react-router-dom";
 import { useLocation, matchPath } from "react-router";
 
 export default function Navbar() {
-	// componentDidMount() {
-	// 	// document
-	// 	// 	.querySelector(".preloader .pre-inner")
-	// 	// 	.fadeOut(800, function () {
-	// 	// 		/* Preload hide */
-	// 	// 		document.querySelector(".preloader").fadeOut();
-	// 	// 		document.querySelector("body").classList.add("loaded");
-	// 	// 	});
-	// 	// document.querySelector("body").classList.add("loaded");
-	// }
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	const navigation = [
@@ -28,66 +18,6 @@ export default function Navbar() {
 	}
 
 	return (
-		// <nav
-		// 	className="navbar is-primary"
-		// 	role="navigation"
-		// 	aria-label="main navigation"
-		// >
-		// 	<div className="container">
-		// 		<div className="navbar-brand">
-		// 			<a
-		// 				role="button"
-		// 				className={`navbar-burger burger ${
-		// 					isOpen && "is-active"
-		// 				}`}
-		// 				aria-label="menu"
-		// 				aria-expanded="false"
-		// 				onClick={() => setOpen(!isOpen)}
-		// 			>
-		// 				<span aria-hidden="true"></span>
-		// 				<span aria-hidden="true"></span>
-		// 				<span aria-hidden="true"></span>
-		// 			</a>
-		// 		</div>
-
-		// 		<div className={`navbar-menu ${isOpen && "is-active"}`}>
-		// 			<div className="navbar-start">
-		// 				<NavLink
-		// 					className="navbar-item"
-		// 					activeClassName="is-active"
-		// 					to="/"
-		// 				>
-		// 					Home
-		// 				</NavLink>
-
-		// 				<NavLink
-		// 					className="navbar-item"
-		// 					activeClassName="is-active"
-		// 					to="/blog"
-		// 				>
-		// 					Blog
-		// 				</NavLink>
-
-		// 				<NavLink
-		// 					className="navbar-item"
-		// 					activeClassName="is-active"
-		// 					to="/portfolio"
-		// 				>
-		// 					Portfolio
-		// 				</NavLink>
-		// 			</div>
-
-		// 			<div className="navbar-end">
-		// 				<div className="navbar-item">
-		// 					<div className="buttons">
-		// 						<a className="button is-white">Log in</a>
-		// 					</div>
-		// 				</div>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </nav>
-
 		<>
 			<nav className="fixed z-50 bg-custom-grey">
 				<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
