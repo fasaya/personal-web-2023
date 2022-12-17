@@ -79,6 +79,7 @@ const Portfolio = () => (
 														alt=""
 														className="max-w-xs max-h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out"
 														height="400px"
+														loading="lazy"
 													/>
 												</div>
 											))}

@@ -1,11 +1,24 @@
 import React from "react";
-// import { UnderConstruction } from "../../Components/Errors/UnderConstruction";
+import { Link } from "react-router-dom";
 
 const UnderDevelopment = () => (
 	<section className="bg-white dark:bg-custom-grey h-full">
 		<div className="grid h-screen place-items-center text-custom-grey-light">
-			{/* <UnderConstruction /> */}
-			<h1>Under Development</h1>
+			<div className="text-center">
+				<h1
+					className="text-white"
+					style={{
+						fontSize: "20px",
+						fontWeight: "700",
+						textTransform: "uppercase",
+						letterSpacing: "0.04em",
+					}}
+				>
+					Under Development
+				</h1>
+
+				<Link to="/">&lt; Back to home</Link>
+			</div>
 		</div>
 	</section>
 );
