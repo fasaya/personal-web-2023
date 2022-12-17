@@ -109,7 +109,7 @@ const Portfolio = () => {
 																	alt={
 																		portfolio.title
 																	}
-																	className="max-w-xs max-h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out"
+																	className="max-w-xs max-h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out hover:cursor-zoom-in"
 																	height="400px"
 																	loading="lazy"
 																	onClick={() =>
@@ -140,6 +140,7 @@ const Portfolio = () => {
 				toggler={lightboxController.toggler}
 				sources={myImages}
 				slide={lightboxController.slide}
+				key={myImages.length}
 				onClose={(instance) => setMyImages([])}
 			/>
 		</>
