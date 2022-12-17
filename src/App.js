@@ -12,10 +12,10 @@ function App() {
 
 				<Footer />
 
-				<div class="line top"></div>
-				<div class="line bottom"></div>
-				<div class="line left"></div>
-				<div class="line right"></div>
+				<div className="line top"></div>
+				<div className="line bottom"></div>
+				<div className="line left"></div>
+				<div className="line right"></div>
 			</div>
 		</>
 	);

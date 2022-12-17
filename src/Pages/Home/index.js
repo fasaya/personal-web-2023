@@ -1,6 +1,7 @@
 import React from "react";
 import Typed from "react-typed";
 import About from "./About";
+import EducationExperience from "./EducationExperience";
 
 const textLines = [
 	`&lt;h1&gt;Web Developer&lt;/h1&gt;`,
@@ -17,12 +18,12 @@ const Home = () => (
 					<h1
 						className="glitch"
 						style={{
-							"font-size": "68px",
-							"font-family": "Roboto Mono",
+							fontSize: "68px",
+							fontFamily: "Roboto Mono",
 							color: "#fff",
-							"font-weight": "700",
-							"text-transform": "uppercase",
-							"letter-spacing": "0.04em",
+							fontWeight: "700",
+							textTransform: "uppercase",
+							letterSpacing: "0.04em",
 						}}
 					>
 						Fasaya
@@ -36,6 +37,7 @@ const Home = () => (
 		</section>
 
 		<About />
+		<EducationExperience />
 	</>
 );
 

@@ -16,6 +16,9 @@ module.exports = {
 				"custom-orange": {
 					1: "#f26b38",
 				},
+				"custom-white": {
+					1: "#f0f0f0",
+				},
 			},
 		},
 	},

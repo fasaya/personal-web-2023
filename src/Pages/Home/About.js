@@ -6,19 +6,19 @@ function calculate_age(dob) {
 }
 
 const About = () => (
-	<section className="bg-white dark:bg-custom-grey h-full">
+	<section className="bg-white dark:bg-custom-grey h-fit">
 		<div className="grid h-screen place-items-center text-custom-grey-light">
 			<div className="sm:w-3/5 w-5/6">
-				<div class="grid grid-cols-3 gap-4">
+				<div className="grid grid-cols-3 gap-4">
 					<div className="col-span-3">
 						<div className="content text-center sm:text-left">
-							<div class="title">
-								<div class="title_inner">About Me</div>
+							<div className="title">
+								<div className="title_inner">About Me</div>
 							</div>
 						</div>
 					</div>
-					<div class="sm:col-span-1 col-span-3">
-						<div className="rounded-full bg-gray-100 w-28 h-28 p-2 z-10 -top-8 shadow-lg hover:shadow-xl transition  justify-center justify-self-center mx-auto mb-2 sm:mb-0">
+					<div className="sm:col-span-1 col-span-3">
+						<div className="rounded-full bg-gray-100 w-28 h-28 sm:w-35 sm:h-35 p-2 z-10 -top-8 shadow-lg hover:shadow-xl transition  justify-center justify-self-center mx-auto mb-2 sm:mb-0">
 							<div className="rounded-full bg-black w-full h-full overflow-auto">
 								<img
 									src="https://avatars.githubusercontent.com/u/53859179?v=4"
@@ -27,7 +27,7 @@ const About = () => (
 							</div>
 						</div>
 					</div>
-					<div class="sm:col-span-2 col-span-3 text-justify">
+					<div className="sm:col-span-2 col-span-3 text-justify">
 						<p>
 							Howdy! I'm{" "}
 							<span className="font-bold text-white">
