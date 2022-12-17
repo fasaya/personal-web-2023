@@ -47,8 +47,8 @@ const Portfolio = () => (
 					<div className="title">
 						<div className="title_inner">Portfolio</div>
 						<p class="text-md text-gray-500 dark:text-gray-400">
-							Here are some projects i have worked on or
-							contribute to.
+							Here are some projects that i have worked on and/or
+							contributed to.
 						</p>
 					</div>
 				</div>
