@@ -1,7 +1,7 @@
 const Experience = () => (
 	<div className="sm:col-span-1 col-span-2">
-		<div className="content">
-			<div className="title !mb-8">
+		<div className="content mb-10">
+			<div className="title !mb-8 text-center sm:text-left">
 				<div className="title_inner">Experience</div>
 			</div>
 
@@ -50,7 +50,7 @@ const Experience = () => (
 const Education = () => (
 	<div className="sm:col-span-1 col-span-2">
 		<div className="content">
-			<div className="title !mb-8">
+			<div className="title !mb-8 text-center sm:text-left">
 				<div className="title_inner">Education</div>
 			</div>
 
@@ -72,9 +72,9 @@ const Education = () => (
 );
 
 const EducationExperience = () => (
-	<section className="bg-white dark:bg-custom-grey h-fit">
-		<div className="grid h-screen place-items-center text-custom-grey-light">
-			<div className="sm:w-3/5 w-5/6">
+	<section className="bg-white dark:bg-custom-grey">
+		<div className="grid h-fit place-items-center text-custom-grey-light">
+			<div className="w-4/5 md:w-3/5">
 				<div className="grid grid-cols-2 gap-4">
 					<Experience />
 					<Education />
