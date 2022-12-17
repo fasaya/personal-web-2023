@@ -109,7 +109,8 @@ const Portfolio = () => {
 																	alt={
 																		portfolio.title
 																	}
-																	className="max-w-xs max-h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out hover:cursor-zoom-in"
+																	className="max-w-xs max-h-32 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out hover:cursor-zoom-in 
+																	drop-shadow-lg"
 																	height="400px"
 																	loading="lazy"
 																	onClick={() =>
