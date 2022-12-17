@@ -18,7 +18,7 @@ const About = () => (
 						</div>
 					</div>
 					<div className="sm:col-span-1 col-span-3">
-						<div className="rounded-full bg-gray-100 w-28 h-28 md:w-35 md:h-35 p-2 z-10 -top-8 shadow-lg hover:shadow-xl transition  justify-center justify-self-center mx-auto mb-2 sm:mb-0">
+						<div className="rounded-full bg-gray-100 w-28 h-28 lg:w-35 lg:h-35 p-2 z-10 -top-8 shadow-lg hover:shadow-xl transition  justify-center justify-self-center mx-auto mb-2 sm:mb-0">
 							<div className="rounded-full bg-black w-full h-full overflow-auto">
 								<img
 									src="https://avatars.githubusercontent.com/u/53859179?v=4"
