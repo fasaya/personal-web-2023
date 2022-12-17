@@ -5,8 +5,8 @@ import EducationExperience from "./EducationExperience";
 
 const textLines = [
 	`&lt;h1&gt;Web Developer&lt;/h1&gt;`,
-	`&lt;?php echo "Freelance Developer"; ?&gt;`,
 	`&lt;script&gt;<br>console.log('Software Developer')<br>&lt;/script&gt;`,
+	`&lt;?php echo "Freelance Developer"; ?&gt;`,
 	`&lt;span&gt;Programmer&lt;/span&gt;`,
 ];
 

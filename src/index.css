@@ -405,3 +405,149 @@ footer .copy {
 	-webkit-transition: all 0.3s ease 0s;
 	-o-transition: all 0.3s ease 0s;
 }
+
+/* 9. Box Items */
+.box-items {
+	position: relative;
+	overflow: hidden;
+	margin-left: -3%;
+}
+
+@media (max-width: 580px) {
+	.box-items {
+		margin-left: 0;
+	}
+}
+
+.box-items .box-item {
+	width: 30.33333%;
+	margin: 0 0 3% 3%;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+@media (max-width: 840px) {
+	.box-items .box-item {
+		width: 47%;
+	}
+}
+
+@media (max-width: 580px) {
+	.box-items .box-item {
+		width: 100%;
+		margin: 0 0 3% 0;
+	}
+}
+
+.box-items .box-item:hover .image .info {
+	opacity: 0.94;
+	transform: scale(1, 1);
+	-webkit-transform: scale(1, 1);
+	-moz-transform: scale(1, 1);
+	-o-transform: scale(1, 1);
+}
+
+.box-items .box-item:hover .desc .name {
+	color: #f26b38;
+}
+
+.box-items .box-item .image {
+	position: relative;
+}
+
+.box-items .box-item .image a {
+	display: block;
+	font-size: 0;
+}
+
+.box-items .box-item .image a img {
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 0;
+}
+
+.box-items .box-item .image .info {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	padding: 18px;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
+	-moz-transform: scale(0.5, 0.5);
+	-o-transform: scale(0.5, 0.5);
+}
+
+.box-items .box-item .image .info .centrize {
+	background: #f26b38;
+}
+
+.box-items .box-item .image .info .ion {
+	color: #ffffff;
+	font-size: 38px;
+	display: inline-block;
+	transition: all 0.1s ease-in 0.4s;
+	-moz-transition: all 0.1s ease-in 0.4s;
+	-webkit-transition: all 0.1s ease-in 0.4s;
+	-o-transition: all 0.1s ease-in 0.4s;
+	font-weight: normal;
+}
+
+.box-items .box-item .desc {
+	position: relative;
+	padding: 15px 45px 5px 45px;
+}
+
+@media (max-width: 1000px) {
+	.box-items .box-item .desc {
+		padding: 15px 15px 5px 15px;
+	}
+}
+
+.box-items .box-item .desc .name {
+	height: 40px;
+	display: block;
+	color: #f0f0f0;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+
+.date {
+	margin: 0 0 10px 0;
+	display: inline-block;
+	padding: 0 5px;
+	height: 20px;
+	line-height: 18px;
+	font-weight: 500;
+	font-size: 11px;
+	color: #f26b38;
+	border: 1px solid #f26b38;
+}
+
+.category {
+	margin: 0 0 10px 0;
+	display: inline-block;
+	font-size: 11px;
+	color: #363636;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	box-shadow: inset 0 -6px 0px #ede574;
+	-moz-box-shadow: inset 0 -6px 0px #ede574;
+	-webkit-box-shadow: inset 0 -6px 0px #ede574;
+	-khtml-box-shadow: inset 0 -6px 0px #ede574;
+}
