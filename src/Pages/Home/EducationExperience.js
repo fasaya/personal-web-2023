@@ -35,7 +35,7 @@ const Experience = () => (
 				<div className="resume-item">
 					<div className="date">2017 - 2019</div>
 					<div className="name">
-						Videograper & Video Editor - Freelance
+						Videographer & Editor - Freelance
 					</div>
 					<p>
 						Responsible for concept making, shoot and edit videos

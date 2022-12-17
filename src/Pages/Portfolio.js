@@ -63,7 +63,7 @@ const Portfolio = () => {
 
 	return (
 		<>
-			<section className="bg-white dark:bg-custom-grey mt-32 mb-20 md:mt-40 md:mb-32">
+			<section className="bg-white dark:bg-custom-grey mt-24 mb-20 md:mt-40 md:mb-32">
 				<div className="h-fit flex items-center justify-center text-custom-grey-light">
 					<div className="sm:w-3/5 w-5/6 text-center">
 						<div className="content text-center sm:text-left">

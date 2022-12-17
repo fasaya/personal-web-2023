@@ -5,9 +5,9 @@ import EducationExperience from "./EducationExperience";
 
 const textLines = [
 	`&lt;h1&gt;Web Developer&lt;/h1&gt;`,
-	`&lt;script&gt;<br>console.log('Software Developer')<br>&lt;/script&gt;`,
-	`&lt;?php echo "Freelance Developer"; ?&gt;`,
-	`&lt;span&gt;Programmer&lt;/span&gt;`,
+	`&lt;script&gt;<br>console.log('Software Engineer')<br>&lt;/script&gt;`,
+	`&lt;?= "Freelance Developer"; ?&gt;`,
+	`&lt;div&gt;Programmer&lt;/div&gt;`,
 ];
 
 const Home = () => (
@@ -19,17 +19,22 @@ const Home = () => (
 						className="glitch"
 						style={{
 							fontSize: "68px",
-							fontFamily: "Roboto Mono",
 							color: "#fff",
-							fontWeight: "700",
-							textTransform: "uppercase",
+							fontWeight: "800",
+							// textTransform: "uppercase",
 							letterSpacing: "0.04em",
 						}}
 					>
-						Fasaya
+						fasaya
 					</h1>
 
-					<h6 className="text-center">
+					<h6
+						className="text-center"
+						style={{
+							fontFamily: "courier",
+							fontSize: "16px",
+						}}
+					>
 						<Typed strings={textLines} typeSpeed={35} loop={true} />
 					</h6>
 				</div>
