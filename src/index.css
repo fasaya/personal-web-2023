@@ -210,9 +210,9 @@ footer {
 	}
 }
 
-footer .soc {
+/* footer .soc {
 	float: right;
-}
+} */
 
 footer .soc a {
 	display: inline-block;
@@ -234,10 +234,10 @@ footer .soc a:hover .ion {
 }
 
 @media (max-width: 840px) {
-	footer .soc {
+	/* footer .soc {
 		float: none;
 		text-align: center;
-	}
+	} */
 
 	footer .soc a {
 		margin: 0 6px;
