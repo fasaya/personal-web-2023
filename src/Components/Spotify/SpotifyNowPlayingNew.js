@@ -7,47 +7,35 @@ import PlayingAnimation from "./PlayingAnimation";
 const SpotifyNowPlayingNew = (props) => {
 	// const [loading, setLoading] = useState(true);
 	const [isFull, setIsFull] = useState(true);
-	// const [result, setResult] = useState({});
-	const [result, setResult] = useState({
-		albumImageUrl:
-			"https://i.scdn.co/image/ab67616d0000b273ea28881e9e363244a4a2347b",
-		artist: "Ariana Grande, Mac Miller",
-		isPlaying: true,
-		songUrl: "https://open.spotify.com/track/0S4RKPbRDA72tvKwVdXQqe",
-		title: "The Way",
-	});
+	const [result, setResult] = useState({});
+	// const [result, setResult] = useState({
+	// 	albumImageUrl:
+	// 		"https://i.scdn.co/image/ab67616d0000b273ea28881e9e363244a4a2347b",
+	// 	artist: "Ariana Grande, Mac Miller",
+	// 	isPlaying: true,
+	// 	songUrl: "https://open.spotify.com/track/0S4RKPbRDA72tvKwVdXQqe",
+	// 	title: "The Way",
+	// });
 
 	// console.log("props", props);
 
-	// useEffect(() => {
-	// 	Promise.all([
-	// 		getNowPlayingItem(
-	// 			props.client_id,
-	// 			props.client_secret,
-	// 			props.refresh_token
-	// 		),
-	// 	]).then((results) => {
-	// 		setResult(results[0]);
-	// 		setLoading(false);
-	// 	});
-	// });
-
-	// let spotify = getNowPlayingItem(
-	// 	props.client_id,
-	// 	props.client_secret,
-	// 	props.refresh_token
-	// );
-
-	// if (spotify != false) {
-	// 	// console.log(spotify, "vv");
-	// 	setResult(spotify ?? {});
-	// 	setLoading(false);
-	// }
+	useEffect(() => {
+		Promise.all([
+			getNowPlayingItem(
+				props.client_id,
+				props.client_secret,
+				props.refresh_token
+			),
+		]).then((results) => {
+			setResult(results[0]);
+			// setLoading(false);
+		});
+	});
 
 	return (
 		<>
 			<div
-				class="grid grid-cols-1 gap-2"
+				className="grid grid-cols-1 gap-2"
 				onMouseEnter={() => setIsFull(true)}
 				onMouseLeave={() => setIsFull(false)}
 				onClick={() => setIsFull(!isFull)}
@@ -88,7 +76,7 @@ const SpotifyNowPlayingNew = (props) => {
 				{isFull && result.isPlaying ? (
 					<div>
 						<div
-							class="grid grid-cols-5 gap-0 p-2 border-custom-grey-light"
+							className="grid grid-cols-5 gap-0 p-2 border-custom-grey-light"
 							style={{
 								borderWidth: "1px",
 								borderRadius: "10px",
@@ -103,7 +91,7 @@ const SpotifyNowPlayingNew = (props) => {
 								/>
 							</div>
 							<div
-								class="col-span-4 text-left flex items-center"
+								className="col-span-4 text-left flex items-center"
 								style={{
 									fontFamily: "Helvetica, Arial, sans-serif",
 								}}
