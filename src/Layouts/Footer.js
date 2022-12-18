@@ -7,8 +7,7 @@ import {
 	LogoLinkedin,
 	LogoInstagram,
 } from "react-ionicons";
-import SpotifyNowPlaying from "../Components/Spotify/SpotifyNowPlaying";
-import { ChakraProvider } from "@chakra-ui/react";
+import SpotifyNowPlayingNew from "../Components/Spotify/SpotifyNowPlayingNew";
 
 export default function Footer() {
 	const d = new Date();
@@ -61,11 +60,9 @@ export default function Footer() {
 					/>
 				</a>
 			</div>
-			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright">
+			<div className="hidden lg:block text-custom-grey-light text-center sm:text-left footer-copyright">
 				{/* © {year} Fasaya. All rights reserved. */}
-				<ChakraProvider>
-					<SpotifyNowPlaying />
-				</ChakraProvider>
+				<SpotifyNowPlayingNew />
 			</div>
 			<div className="clr" />
 		</footer>
