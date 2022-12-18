@@ -15,7 +15,7 @@ export default function Footer() {
 
 	return (
 		<footer className="bg-custom-grey">
-			<div className="soc mt-0 ml-4 mr-4 mb-4 md:m-0 text-center float-none md:float-right">
+			<div className="soc mt-0 ml-4 mr-4 mb-4 md:m-0 md:ml-3 text-center float-none md:float-right">
 				<a target="_blank" href="https://github.com/fasaya">
 					<LogoGithub
 						color={"#f0f0f0"}
@@ -60,7 +60,7 @@ export default function Footer() {
 					/>
 				</a>
 			</div>
-			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright w-[20rem] m-0">
+			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright m-0">
 				{/* © {year} Fasaya. All rights reserved. */}
 				<SpotifyNowPlayingNew />
 			</div>

@@ -6,7 +6,7 @@ import PlayingAnimation from "./PlayingAnimation";
 
 const SpotifyNowPlayingNew = (props) => {
 	// const [loading, setLoading] = useState(true);
-	const [isFull, setIsFull] = useState(true);
+	const [isFull, setIsFull] = useState(false);
 	const [result, setResult] = useState({});
 	// const [result, setResult] = useState({
 	// 	albumImageUrl:
@@ -36,9 +36,9 @@ const SpotifyNowPlayingNew = (props) => {
 		<>
 			<div
 				className="grid grid-cols-1 gap-2"
-				onMouseEnter={() => setIsFull(true)}
-				onMouseLeave={() => setIsFull(false)}
-				onClick={() => setIsFull(!isFull)}
+				// onMouseEnter={() => setIsFull(true)}
+				// onMouseLeave={() => setIsFull(false)}
+				// onClick={() => setIsFull(!isFull)}
 			>
 				{isFull ? (
 					<>
@@ -60,7 +60,9 @@ const SpotifyNowPlayingNew = (props) => {
 					</>
 				) : (
 					<div className="flex flex-1 items-center">
-						<SpotifyLogo />
+						<div className="w-[20px]">
+							<SpotifyLogo />
+						</div>
 						<span
 							className="mx-2"
 							style={{
@@ -69,12 +71,14 @@ const SpotifyNowPlayingNew = (props) => {
 						>
 							<strong>{result.title}</strong> - {result.artist}
 						</span>
-						{result.isPlaying && <PlayingAnimation />}
+						<div className="w-[20px]">
+							{result.isPlaying && <PlayingAnimation />}
+						</div>
 					</div>
 				)}
 
 				{isFull && result.isPlaying ? (
-					<div>
+					<div className="w-[20rem]">
 						<div
 							className="grid grid-cols-5 gap-0 p-2 border-custom-grey-light"
 							style={{
