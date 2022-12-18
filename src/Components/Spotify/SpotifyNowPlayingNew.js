@@ -5,9 +5,10 @@ import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 
 const SpotifyNowPlayingNew = (props) => {
-	// const [loading, setLoading] = useState(true);
 	const [isFull, setIsFull] = useState(false);
 	const [result, setResult] = useState({});
+	const [isPlaying, setIsPlaying] = useState({});
+
 	// const [result, setResult] = useState({
 	// 	albumImageUrl:
 	// 		"https://i.scdn.co/image/ab67616d0000b273ea28881e9e363244a4a2347b",
@@ -19,7 +20,25 @@ const SpotifyNowPlayingNew = (props) => {
 
 	// console.log("props", props);
 
-	useEffect(() => {
+	function getPlaying() {
+		Promise.all([
+			getNowPlayingItem(
+				props.client_id,
+				props.client_secret,
+				props.refresh_token
+			),
+		]).then((results) => {
+			if (results[0].isPlaying) {
+				setResult(results[0]);
+				setIsPlaying(true);
+			} else {
+				getLastPlayed();
+				setIsPlaying(true);
+			}
+		});
+	}
+
+	function getLastPlayed() {
 		Promise.all([
 			getNowPlayingItem(
 				props.client_id,
@@ -28,36 +47,42 @@ const SpotifyNowPlayingNew = (props) => {
 			),
 		]).then((results) => {
 			setResult(results[0]);
-			// setLoading(false);
 		});
-	});
+	}
+
+	useEffect(() => {
+		getPlaying();
+	}, []);
 
 	return (
 		<>
 			<div
 				className="grid grid-cols-1 gap-2"
-				// onMouseEnter={() => setIsFull(true)}
+				onMouseEnter={() => {
+					// setIsFull(true);
+					getPlaying();
+				}}
 				// onMouseLeave={() => setIsFull(false)}
-				// onClick={() => setIsFull(!isFull)}
+				// onClick={() => {
+				// 	setIsFull(!isFull);
+				// }}
 			>
 				{isFull ? (
-					<>
-						<div className="flex flex-1">
-							<SpotifyLogo />
-							<h1
-								className="semibold mx-2"
-								style={{
-									fontFamily: "Helvetica, Arial, sans-serif",
-									fontWeight: "600",
-								}}
-							>
-								{result.isPlaying
-									? "Now playing"
-									: "Currently offline"}
-							</h1>
-							{result.isPlaying && <PlayingAnimation />}
-						</div>
-					</>
+					<div className="flex flex-1">
+						<SpotifyLogo />
+						<h1
+							className="mx-2"
+							style={{
+								fontFamily: "Helvetica, Arial, sans-serif",
+								fontWeight: "600",
+							}}
+						>
+							{result.isPlaying
+								? "Now playing"
+								: "Currently offline"}
+						</h1>
+						{result.isPlaying && <PlayingAnimation />}
+					</div>
 				) : (
 					<div className="flex flex-1 items-center">
 						<div className="w-[20px]">
@@ -69,7 +94,22 @@ const SpotifyNowPlayingNew = (props) => {
 								fontFamily: "Helvetica, Arial, sans-serif",
 							}}
 						>
-							<strong>{result.title}</strong> - {result.artist}
+							{result.isPlaying ? (
+								<>
+									<strong>{result.title}</strong> -{" "}
+									{result.artist}
+								</>
+							) : (
+								<h1
+									style={{
+										fontFamily:
+											"Helvetica, Arial, sans-serif",
+										fontWeight: "600",
+									}}
+								>
+									Currently offline
+								</h1>
+							)}
 						</span>
 						<div className="w-[20px]">
 							{result.isPlaying && <PlayingAnimation />}

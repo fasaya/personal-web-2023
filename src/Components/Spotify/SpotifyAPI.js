@@ -2,6 +2,7 @@ import querystring from "querystring";
 import { Buffer } from "buffer";
 
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const RECENTLY_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-played`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
@@ -56,6 +57,7 @@ export default async function getNowPlayingItem(
 		client_secret,
 		refresh_token
 	);
+
 	if (response.status === 204 || response.status > 400) {
 		return false;
 	}
@@ -73,5 +75,55 @@ export default async function getNowPlayingItem(
 		isPlaying,
 		songUrl,
 		title,
+	};
+}
+
+export const getRecentlyPlayed = async (
+	client_id,
+	client_secret,
+	refresh_token
+) => {
+	const { access_token } = await getAccessToken(
+		client_id,
+		client_secret,
+		refresh_token
+	);
+
+	return fetch(RECENTLY_PLAYED_ENDPOINT, {
+		headers: {
+			Authorization: `Bearer ${access_token}`,
+		},
+	});
+};
+
+export async function getRecentlyPlayedItem(
+	client_id,
+	client_secret,
+	refresh_token
+) {
+	const response = await getRecentlyPlayed(
+		client_id,
+		client_secret,
+		refresh_token
+	);
+
+	if (response.status === 204 || response.status > 400) {
+		return false;
+	}
+
+	let song = await response.json();
+	song = song.items[0];
+	const albumImageUrl = song.track.album.images[0].url;
+	const artist = song.track.artists.map((_artist) => _artist.name).join(", ");
+	const songUrl = song.track.external_urls.spotify;
+	const title = song.track.name;
+	const playedAt = song.played_at;
+
+	return {
+		albumImageUrl,
+		artist,
+		songUrl,
+		title,
+		playedAt,
 	};
 }
