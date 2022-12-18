@@ -8,6 +8,7 @@ import {
 	LogoInstagram,
 } from "react-ionicons";
 import SpotifyNowPlayingNew from "../Components/Spotify/SpotifyNowPlayingNew";
+import SpotifyNowPlaying from "../Components/Spotify/SpotifyNowPlaying";
 
 export default function Footer() {
 	const d = new Date();
@@ -62,7 +63,8 @@ export default function Footer() {
 			</div>
 			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright m-0">
 				{/* © {year} Fasaya. All rights reserved. */}
-				<SpotifyNowPlayingNew />
+				{/* <SpotifyNowPlayingNew /> */}
+				<SpotifyNowPlaying />
 			</div>
 			<div className="clr" />
 		</footer>

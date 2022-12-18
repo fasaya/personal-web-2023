@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import getNowPlayingItem from "./SpotifyAPI";
+import { getNowPlayingItem } from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 
@@ -8,17 +8,6 @@ const SpotifyNowPlayingNew = (props) => {
 	const [isFull, setIsFull] = useState(false);
 	const [result, setResult] = useState({});
 	const [isPlaying, setIsPlaying] = useState({});
-
-	// const [result, setResult] = useState({
-	// 	albumImageUrl:
-	// 		"https://i.scdn.co/image/ab67616d0000b273ea28881e9e363244a4a2347b",
-	// 	artist: "Ariana Grande, Mac Miller",
-	// 	isPlaying: true,
-	// 	songUrl: "https://open.spotify.com/track/0S4RKPbRDA72tvKwVdXQqe",
-	// 	title: "The Way",
-	// });
-
-	// console.log("props", props);
 
 	function getPlaying() {
 		Promise.all([

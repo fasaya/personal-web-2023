@@ -47,7 +47,7 @@ export const getNowPlaying = async (
 	});
 };
 
-export default async function getNowPlayingItem(
+export async function getNowPlayingItem(
 	client_id,
 	client_secret,
 	refresh_token
@@ -118,6 +118,7 @@ export async function getRecentlyPlayedItem(
 	const songUrl = song.track.external_urls.spotify;
 	const title = song.track.name;
 	const playedAt = song.played_at;
+	const isPlaying = false;
 
 	return {
 		albumImageUrl,
@@ -125,5 +126,6 @@ export async function getRecentlyPlayedItem(
 		songUrl,
 		title,
 		playedAt,
+		isPlaying,
 	};
 }
