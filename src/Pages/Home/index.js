@@ -2,8 +2,6 @@ import React from "react";
 import Typed from "react-typed";
 import About from "./About";
 import EducationExperience from "./EducationExperience";
-import SpotifyNowPlaying from "../../Components/Spotify/SpotifyNowPlaying";
-import { ChakraProvider } from "@chakra-ui/react";
 // require("dotenv").config();
 
 const textLines = [
@@ -40,9 +38,6 @@ const Home = () => (
 					>
 						<Typed strings={textLines} typeSpeed={35} loop={true} />
 					</h6>
-					<ChakraProvider>
-						<SpotifyNowPlaying />
-					</ChakraProvider>
 				</div>
 			</div>
 		</section>

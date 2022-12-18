@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation, matchPath } from "react-router";
+import SpotifyNowPlaying from "../Components/Spotify/SpotifyNowPlaying";
+import { ChakraProvider } from "@chakra-ui/react";
 
 export default function Navbar() {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -88,8 +90,13 @@ export default function Navbar() {
 								<img
 									className="hidden h-8 w-auto lg:block"
 									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-									alt="Your Company"
+									alt="You
+									r Company"
 								/> */}
+
+								<ChakraProvider>
+									<SpotifyNowPlaying />
+								</ChakraProvider>
 							</div>
 							<div className="hidden sm:ml-6 sm:block">
 								<div className="flex space-x-4">

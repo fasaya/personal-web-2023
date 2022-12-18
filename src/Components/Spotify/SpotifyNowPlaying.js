@@ -9,18 +9,57 @@ const SpotifyNowPlaying = (props) => {
 	const [loading, setLoading] = useState(true);
 	const [result, setResult] = useState({});
 
-	useEffect(() => {
-		Promise.all([
-			getNowPlayingItem(
-				props.client_id,
-				props.client_secret,
-				props.refresh_token
-			),
-		]).then((results) => {
-			setResult(results[0]);
+	// console.log("props", props);
+
+	// useEffect(() => {
+	// 	Promise.all([
+	// 		getNowPlayingItem(
+	// 			props.client_id,
+	// 			props.client_secret,
+	// 			props.refresh_token
+	// 		),
+	// 	]).then((results) => {
+	// 		setResult(results[0]);
+	// 		setLoading(false);
+	// 	});
+	// });
+
+	// Promise.all([
+	// 	getNowPlayingItem(
+	// 		props.client_id,
+	// 		props.client_secret,
+	// 		props.refresh_token
+	// 	),
+	// ]).then((results) => {
+	// 	setResult(results[0]);
+	// 	console.log("success", results[0]);
+	// 	setLoading(false);
+	// });
+
+	new Promise((resolve, reject) => {
+		let spotify = getNowPlayingItem(
+			props.client_id,
+			props.client_secret,
+			props.refresh_token
+		);
+
+		if (spotify == false) {
+			reject();
+		} else {
+			setTimeout(() => {
+				resolve(spotify);
+			}, 5000);
+		}
+	})
+		.then((value) => {
+			if (value) {
+				setResult(value);
+			} else {
+				setResult({});
+			}
 			setLoading(false);
-		});
-	});
+		})
+		.catch((value) => console.log("erro", value));
 
 	return (
 		<Center>
