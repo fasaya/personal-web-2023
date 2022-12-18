@@ -6,7 +6,8 @@ import PlayingAnimation from "./PlayingAnimation";
 
 const SpotifyNowPlayingNew = (props) => {
 	// const [loading, setLoading] = useState(true);
-	const [isFull, setIsFull] = useState(false);
+	const [isFull, setIsFull] = useState(true);
+	// const [result, setResult] = useState({});
 	const [result, setResult] = useState({
 		albumImageUrl:
 			"https://i.scdn.co/image/ab67616d0000b273ea28881e9e363244a4a2347b",
@@ -46,7 +47,7 @@ const SpotifyNowPlayingNew = (props) => {
 	return (
 		<>
 			<div
-				class="grid grid-cols-1 gap-2 w-[20rem]"
+				class="grid grid-cols-1 gap-2"
 				onMouseEnter={() => setIsFull(true)}
 				onMouseLeave={() => setIsFull(false)}
 				onClick={() => setIsFull(!isFull)}
@@ -78,13 +79,13 @@ const SpotifyNowPlayingNew = (props) => {
 								fontFamily: "Helvetica, Arial, sans-serif",
 							}}
 						>
-							{result.title} - {result.artist}
+							<strong>{result.title}</strong> - {result.artist}
 						</span>
 						{result.isPlaying && <PlayingAnimation />}
 					</div>
 				)}
 
-				{isFull ? (
+				{isFull && result.isPlaying ? (
 					<div>
 						<div
 							class="grid grid-cols-5 gap-0 p-2 border-custom-grey-light"

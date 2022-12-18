@@ -185,7 +185,7 @@ footer {
 	position: fixed;
 	bottom: 20px;
 	left: 0;
-	padding: 15px 60px 30px 60px;
+	padding: 15px 55px 25px 55px;
 	width: 100%;
 	/* background: #ffffff; */
 	z-index: 100;
@@ -203,11 +203,11 @@ footer {
 		padding: 15px 30px 0px 30px;
 	}
 
-	.footer-copyright {
+	/* .footer-copyright {
 		margin-top: 10px;
 		margin-bottom: 20px;
 		padding: 0px;
-	}
+	} */
 }
 
 /* footer .soc {
@@ -216,7 +216,7 @@ footer {
 
 footer .soc a {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: bottom;
 	margin-left: 12px;
 }
 

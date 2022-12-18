@@ -60,7 +60,7 @@ export default function Footer() {
 					/>
 				</a>
 			</div>
-			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright">
+			<div className="hidden md:block text-custom-grey-light text-center sm:text-left footer-copyright w-[20rem] m-0">
 				{/* © {year} Fasaya. All rights reserved. */}
 				<SpotifyNowPlayingNew />
 			</div>
