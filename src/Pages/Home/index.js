@@ -2,6 +2,7 @@ import React from "react";
 import Typed from "react-typed";
 import About from "./About";
 import EducationExperience from "./EducationExperience";
+// require("dotenv").config();
 
 const textLines = [
 	`&lt;h1&gt;Web Developer&lt;/h1&gt;`,
