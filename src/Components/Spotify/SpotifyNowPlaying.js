@@ -85,12 +85,10 @@ const SpotifyNowPlaying = (props) => {
 				) : (
 					<div className="flex flex-1 items-center">
 						<Current isPlaying={isPlaying} result={result} />
-						{isPlaying != null ? (
+						{isPlaying != null && (
 							<div className="w-[20px]">
 								<PausedAnimation />
 							</div>
-						) : (
-							<></>
 						)}
 					</div>
 				)}
@@ -146,7 +144,6 @@ const Current = ({ isPlaying, result }) => {
 				className="mx-2"
 				style={{
 					fontFamily: "Helvetica, Arial, sans-serif",
-					// height: "40px",
 				}}
 			>
 				{play}
