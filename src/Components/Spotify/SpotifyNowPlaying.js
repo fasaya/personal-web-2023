@@ -23,7 +23,7 @@ const SpotifyNowPlaying = (props) => {
 			),
 		]).then((results) => {
 			if (results[0] != false) {
-				console.log("res", results[0]);
+				// console.log("res", results[0]);
 				setResult(results[0]);
 				setIsPlaying(results[0].isPlaying);
 
@@ -58,7 +58,7 @@ const SpotifyNowPlaying = (props) => {
 	function getPlaylist(playlistEndpoit) {
 		Promise.all([getPlaylistItem(playlistEndpoit)]).then((results) => {
 			setPlaylist(results[0]);
-			console.log("playlist", results[0]);
+			// console.log("playlist", results[0]);
 		});
 	}
 
