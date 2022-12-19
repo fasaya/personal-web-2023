@@ -28,7 +28,9 @@ const SpotifyNowPlaying = (props) => {
 				setIsPlaying(results[0].isPlaying);
 
 				if (results[0].playlistEndpoit) {
-					getLastPlayed(results[0].playlistEndpoit);
+					getPlaylist(results[0].playlistEndpoit);
+				} else {
+					setPlaylist({});
 				}
 			} else {
 				getLastPlayed();
@@ -53,7 +55,7 @@ const SpotifyNowPlaying = (props) => {
 		});
 	}
 
-	function getLastPlayed(playlistEndpoit) {
+	function getPlaylist(playlistEndpoit) {
 		Promise.all([getPlaylistItem(playlistEndpoit)]).then((results) => {
 			setPlaylist(results[0]);
 			console.log("playlist", results[0]);
