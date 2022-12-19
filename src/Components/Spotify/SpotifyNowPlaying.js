@@ -76,75 +76,51 @@ const SpotifyNowPlaying = (props) => {
 			>
 				{isPlaying ? (
 					<div className="flex flex-1 items-center">
-						<div className="w-[25px]">
-							<a
-								href="https://open.spotify.com/user/fasayaa?si=Rmz8YjgzQe-W3zor1KUhVA"
-								target="_blank"
-							>
-								<SpotifyLogo />
-							</a>
-						</div>
-						<span
-							className="mx-2"
-							style={{
-								fontFamily: "Helvetica, Arial, sans-serif",
-							}}
-						>
-							{result.isPlaying ? (
-								<a href={result.songUrl} target="_blank">
-									<strong>{result.title}</strong> -{" "}
-									{result.artist}
-								</a>
-							) : (
-								<h1
-									style={{
-										fontFamily:
-											"Helvetica, Arial, sans-serif",
-										fontWeight: "600",
-									}}
-								>
-									Currently offline
-								</h1>
-							)}
-						</span>
+						<Current isPlaying={isPlaying} result={result} />
 						<div className="w-[20px]">
 							{result.isPlaying && <PlayingAnimation />}
 						</div>
 					</div>
 				) : (
 					<div className="flex flex-1 items-center">
-						<div className="w-[25px]">
-							<SpotifyLogo />
-						</div>
-						<span
-							className="mx-2"
-							style={{
-								fontFamily: "Helvetica, Arial, sans-serif",
-							}}
-						>
-							{isPlaying != null ? (
-								<a href={result.songUrl} target="_blank">
-									<strong>{result.title}</strong> -{" "}
-									{result.artist}
-								</a>
-							) : (
-								<h1
-									style={{
-										fontFamily:
-											"Helvetica, Arial, sans-serif",
-										fontWeight: "600",
-									}}
-								>
-									Currently offline
-								</h1>
-							)}
-						</span>
+						<Current isPlaying={isPlaying} result={result} />
 						<div className="w-[20px]">
 							{isPlaying != null ? <PausedAnimation /> : <></>}
 						</div>
 					</div>
 				)}
 			</div>
+		</>
+	);
+};
+
+const Current = ({ isPlaying, result }) => {
+	return (
+		<>
+			<div className="w-[25px]">
+				<SpotifyLogo />
+			</div>
+			<span
+				className="mx-2"
+				style={{
+					fontFamily: "Helvetica, Arial, sans-serif",
+				}}
+			>
+				{isPlaying != null ? (
+					<a href={result.songUrl} target="_blank">
+						<strong>{result.title}</strong> - {result.artist}
+					</a>
+				) : (
+					<h1
+						style={{
+							fontFamily: "Helvetica, Arial, sans-serif",
+							fontWeight: "600",
+						}}
+					>
+						Currently offline
+					</h1>
+				)}
+			</span>
 		</>
 	);
 };

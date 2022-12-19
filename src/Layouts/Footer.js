@@ -16,7 +16,7 @@ export default function Footer() {
 
 	return (
 		<footer className="bg-custom-grey">
-			<div class="flex justify-center md:justify-between">
+			<div className="flex justify-center md:justify-between">
 				<div className="hidden md:flex text-custom-grey-light text-center sm:text-left m-0 content-center">
 					<SpotifyNowPlaying />
 				</div>
