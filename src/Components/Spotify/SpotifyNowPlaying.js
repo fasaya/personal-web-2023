@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getNowPlayingItem, getRecentlyPlayedItem } from "./SpotifyAPI";
+import {
+	getNowPlayingItem,
+	getPlaylistItem,
+	getRecentlyPlayedItem,
+} from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
 import PausedAnimation from "./PausedAnimation";
@@ -8,7 +12,7 @@ import PausedAnimation from "./PausedAnimation";
 const SpotifyNowPlaying = (props) => {
 	const [result, setResult] = useState({});
 	const [isPlaying, setIsPlaying] = useState(null);
-	// console.log("isPlaying", isPlaying);
+	const [playlist, setPlaylist] = useState({});
 
 	function getPlaying() {
 		Promise.all([
@@ -19,8 +23,13 @@ const SpotifyNowPlaying = (props) => {
 			),
 		]).then((results) => {
 			if (results[0] != false) {
+				console.log("res", results[0]);
 				setResult(results[0]);
 				setIsPlaying(results[0].isPlaying);
+
+				if (results[0].playlistEndpoit) {
+					getLastPlayed(results[0].playlistEndpoit);
+				}
 			} else {
 				getLastPlayed();
 			}
@@ -41,6 +50,13 @@ const SpotifyNowPlaying = (props) => {
 			} else {
 				setResult({});
 			}
+		});
+	}
+
+	function getLastPlayed(playlistEndpoit) {
+		Promise.all([getPlaylistItem(playlistEndpoit)]).then((results) => {
+			setPlaylist(results[0]);
+			console.log("playlist", results[0]);
 		});
 	}
 
