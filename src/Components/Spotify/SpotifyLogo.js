@@ -2,7 +2,7 @@ import React from "react";
 
 const SpotifyLogo = () => (
 	<svg
-		width="20px"
+		width="25px"
 		x="0px"
 		y="0px"
 		viewBox="0 0 20 20"
