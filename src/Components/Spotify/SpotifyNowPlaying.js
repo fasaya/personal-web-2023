@@ -77,7 +77,12 @@ const SpotifyNowPlaying = (props) => {
 				{isPlaying ? (
 					<div className="flex flex-1 items-center">
 						<div className="w-[20px]">
-							<SpotifyLogo />
+							<a
+								href="https://open.spotify.com/user/fasayaa?si=Rmz8YjgzQe-W3zor1KUhVA"
+								target="_blank"
+							>
+								<SpotifyLogo />
+							</a>
 						</div>
 						<span
 							className="mx-2"
