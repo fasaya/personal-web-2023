@@ -7,7 +7,7 @@ import {
 	LogoLinkedin,
 	LogoInstagram,
 } from "react-ionicons";
-import SpotifyNowPlayingNew from "../Components/Spotify/SpotifyNowPlayingNew";
+// import SpotifyNowPlayingNew from "../Components/Spotify/SpotifyNowPlayingNew";
 import SpotifyNowPlaying from "../Components/Spotify/SpotifyNowPlaying";
 
 export default function Footer() {
@@ -18,6 +18,7 @@ export default function Footer() {
 		<footer className="bg-custom-grey">
 			<div className="flex justify-center md:justify-between">
 				<div className="hidden md:flex text-custom-grey-light text-center sm:text-left m-0 content-center">
+					{/* <SpotifyNowPlayingNew /> */}
 					<SpotifyNowPlaying />
 				</div>
 				<div className="float-none md:float-right content-center">

@@ -76,16 +76,22 @@ const SpotifyNowPlaying = (props) => {
 				{isPlaying ? (
 					<div className="flex flex-1 items-center">
 						<Current isPlaying={isPlaying} result={result} />
-						<div className="w-[20px]">
-							{result.isPlaying && <PlayingAnimation />}
-						</div>
+						{result.isPlaying && (
+							<div className="w-[20px]">
+								<PlayingAnimation />
+							</div>
+						)}
 					</div>
 				) : (
 					<div className="flex flex-1 items-center">
 						<Current isPlaying={isPlaying} result={result} />
-						<div className="w-[20px]">
-							{isPlaying != null ? <PausedAnimation /> : <></>}
-						</div>
+						{isPlaying != null ? (
+							<div className="w-[20px]">
+								<PausedAnimation />
+							</div>
+						) : (
+							<></>
+						)}
 					</div>
 				)}
 			</div>
@@ -105,14 +111,14 @@ const Current = ({ isPlaying, result }) => {
 	} else if (isPlaying == null && Object.keys(result).length > 0) {
 		play = (
 			<>
-				{/* <p
+				<p
 					style={{
 						fontSize: "10px",
-						lineHeight: "0.5",
+						marginBottom: "-4px",
 					}}
 				>
-					Last played
-				</p> */}
+					Recently played
+				</p>
 				<a href={result.songUrl} target="_blank">
 					<strong>{result.title}</strong> - {result.artist}
 				</a>

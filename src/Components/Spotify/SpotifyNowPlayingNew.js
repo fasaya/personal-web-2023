@@ -51,10 +51,10 @@ const SpotifyNowPlayingNew = (props) => {
 					// setIsFull(true);
 					getPlaying();
 				}}
-				// onMouseLeave={() => setIsFull(false)}
-				// onClick={() => {
-				// 	setIsFull(!isFull);
-				// }}
+				onMouseLeave={() => setIsFull(false)}
+				onClick={() => {
+					setIsFull(!isFull);
+				}}
 			>
 				{isFull ? (
 					<div className="flex flex-1">
