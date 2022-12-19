@@ -23,7 +23,6 @@ const SpotifyNowPlaying = (props) => {
 			),
 		]).then((results) => {
 			if (results[0] != false) {
-				// console.log("res", results[0]);
 				setResult(results[0]);
 				setIsPlaying(results[0].isPlaying);
 
@@ -46,11 +45,12 @@ const SpotifyNowPlaying = (props) => {
 				props.refresh_token
 			),
 		]).then((results) => {
-			setIsPlaying(false);
 			if (results[0] != false) {
 				setResult(results[0]);
+				setIsPlaying(null);
 			} else {
 				setResult({});
+				setIsPlaying(null);
 			}
 		});
 	}
@@ -58,7 +58,6 @@ const SpotifyNowPlaying = (props) => {
 	function getPlaylist(playlistEndpoit) {
 		Promise.all([getPlaylistItem(playlistEndpoit)]).then((results) => {
 			setPlaylist(results[0]);
-			// console.log("playlist", results[0]);
 		});
 	}
 
@@ -95,6 +94,43 @@ const SpotifyNowPlaying = (props) => {
 };
 
 const Current = ({ isPlaying, result }) => {
+	let play = <></>;
+
+	if (isPlaying != null && Object.keys(result).length !== 0) {
+		play = (
+			<a href={result.songUrl} target="_blank">
+				<strong>{result.title}</strong> - {result.artist}
+			</a>
+		);
+	} else if (isPlaying == null && Object.keys(result).length > 0) {
+		play = (
+			<>
+				{/* <p
+					style={{
+						fontSize: "10px",
+						lineHeight: "0.5",
+					}}
+				>
+					Last played
+				</p> */}
+				<a href={result.songUrl} target="_blank">
+					<strong>{result.title}</strong> - {result.artist}
+				</a>
+			</>
+		);
+	} else {
+		play = (
+			<h1
+				style={{
+					fontFamily: "Helvetica, Arial, sans-serif",
+					fontWeight: "600",
+				}}
+			>
+				Currently offline
+			</h1>
+		);
+	}
+
 	return (
 		<>
 			<div className="w-[25px]">
@@ -104,22 +140,10 @@ const Current = ({ isPlaying, result }) => {
 				className="mx-2"
 				style={{
 					fontFamily: "Helvetica, Arial, sans-serif",
+					// height: "40px",
 				}}
 			>
-				{isPlaying != null ? (
-					<a href={result.songUrl} target="_blank">
-						<strong>{result.title}</strong> - {result.artist}
-					</a>
-				) : (
-					<h1
-						style={{
-							fontFamily: "Helvetica, Arial, sans-serif",
-							fontWeight: "600",
-						}}
-					>
-						Currently offline
-					</h1>
-				)}
+				{play}
 			</span>
 		</>
 	);
