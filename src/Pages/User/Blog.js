@@ -1,5 +1,5 @@
 import React from "react";
-import { UnderConstruction } from "../Components/Errors/UnderConstruction";
+import { UnderConstruction } from "../../Components/Errors/UnderConstruction";
 
 const Blog = () => (
 	<section className="bg-custom-grey h-full">

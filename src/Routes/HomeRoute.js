@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../Pages/Home";
-import Blog from "../Pages/Blog";
-import Portfolio from "../Pages/Portfolio";
-import NotFound from "../Pages/Errors/NotFound";
-import UnderDevelopment from "../Pages/Errors/UnderDevelopment";
+import Home from "../Pages/User/Home";
+import Blog from "../Pages/User/Blog";
+import Portfolio from "../Pages/User/Portfolio";
+import NotFound from "../Pages/User/Errors/NotFound";
+import UnderDevelopment from "../Pages/User/Errors/UnderDevelopment";
 
 export default function HomeRoute() {
 	return (
