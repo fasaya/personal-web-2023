@@ -1,8 +1,8 @@
-import Navbar from "./Layouts/Navbar";
-import Routes from "./Routes/index";
-import Footer from "./Layouts/Footer";
+import Navbar from "./Navbar";
+import Routes from "../../Routes/index";
+import Footer from "./Footer";
 
-function App() {
+function Index() {
 	return (
 		<>
 			<Navbar />
@@ -21,4 +21,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Index;

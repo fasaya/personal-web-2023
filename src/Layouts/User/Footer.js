@@ -8,7 +8,7 @@ import {
 	LogoInstagram,
 } from "react-ionicons";
 // import SpotifyNowPlayingNew from "../Components/Spotify/SpotifyNowPlayingNew";
-import SpotifyNowPlaying from "../Components/Spotify/SpotifyNowPlaying";
+import SpotifyNowPlaying from "../../Components/Spotify/SpotifyNowPlaying";
 
 export default function Footer() {
 	const d = new Date();
