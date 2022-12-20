@@ -63,22 +63,19 @@ const Portfolio = () => {
 
 	return (
 		<>
-			<section className="bg-white dark:bg-custom-grey mt-24 mb-20 md:mt-40 md:mb-32">
+			<section className="bg-custom-grey mt-24 mb-20 md:mt-40 md:mb-32">
 				<div className="h-fit flex items-center justify-center text-custom-grey-light">
 					<div className="sm:w-3/5 w-5/6 text-center">
 						<div className="content text-center sm:text-left">
 							<div className="title">
 								<div className="title_inner">Portfolio</div>
-								<p className="text-md text-gray-500 dark:text-gray-400">
+								<p className="text-md text-gray-400">
 									Here are some projects that i have worked on
 									and/or contributed to.
 								</p>
 							</div>
 						</div>
-						<ul
-							role="list"
-							className="divide-y divide-gray-200 dark:divide-gray-700"
-						>
+						<ul role="list" className="divide-y divide-gray-700">
 							{portfolios.map((portfolio, index1) => (
 								<li className="py-3 sm:py-4" key={index1}>
 									<div className="flex items-center space-x-4">
@@ -86,7 +83,7 @@ const Portfolio = () => {
 											<p className="text-md font-semibold text-white">
 												{portfolio.company}
 											</p>
-											<p className="text-sm font-sm text-gray-300 dark:text-white-500 mb-2">
+											<p className="text-sm font-sm text-white-500 mb-2">
 												<a href={portfolio.url}>
 													{portfolio.title}
 												</a>

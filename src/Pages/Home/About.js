@@ -6,7 +6,7 @@ function calculate_age(dob) {
 }
 
 const About = () => (
-	<section className="bg-white dark:bg-custom-grey h-fi">
+	<section className="bg-custom-grey h-fi">
 		<div className="grid h-screen place-items-center text-custom-grey-light">
 			<div className="w-4/5 md:w-3/5">
 				<div className="grid grid-cols-3 gap-4">

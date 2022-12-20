@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NotFound = () => (
-	<section className="bg-white dark:bg-custom-grey h-full">
+	<section className="bg-custom-grey h-full">
 		<div className="grid h-screen place-items-center text-custom-grey-light">
 			<div className="text-center">
 				<h1

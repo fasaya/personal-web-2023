@@ -72,7 +72,7 @@ const Education = () => (
 );
 
 const EducationExperience = () => (
-	<section className="bg-white dark:bg-custom-grey mb-24 md:mb-20">
+	<section className="bg-custom-grey mb-24 md:mb-20">
 		<div className="grid h-fit place-items-center text-custom-grey-light">
 			<div className="w-4/5 md:w-5/6">
 				<div className="grid grid-cols-2 gap-4">
