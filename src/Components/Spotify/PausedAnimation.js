@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 const PausedAnimation = () => {
 	return (
 		<Playing>
-			<span style={{ marginRight: "3px" }} />
+			<span style={{ marginRight: "2.8px" }} />
 			<span />
 		</Playing>
 	);
@@ -22,7 +22,7 @@ const Playing = styled.div`
 	span {
 		width: 3px;
 		height: 100%;
-		background-color: #1ed760;
+		background-color: #676767;
 		border-radius: 0.5px;
 		content: "";
 		transform-origin: bottom;

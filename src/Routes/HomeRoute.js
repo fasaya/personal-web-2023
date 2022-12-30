@@ -10,8 +10,8 @@ export default function HomeRoute() {
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/portfolio" element={<Portfolio />} />
-			{/* <Route path="/blog" element={<Blog />} /> */}
-			<Route path="/blog" element={<UnderDevelopment />} />
+			<Route path="/blog" element={<Blog />} />
+			{/* <Route path="/blog" element={<UnderDevelopment />} /> */}
 
 			<Route path="*" element={<NotFound />} />
 		</Routes>
