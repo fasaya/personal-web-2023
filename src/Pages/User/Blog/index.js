@@ -1,6 +1,7 @@
 import React from "react";
+import Side from "./Side";
 
-const features = [
+const posts = [
 	{ name: "Origin", description: "Designed by Good Goods, Inc." },
 	{
 		name: "Material",
@@ -20,55 +21,40 @@ const features = [
 	},
 ];
 
+let datee = new Date().toLocaleDateString();
+
 const Blog = () => (
-	<section className="bg-custom-grey h-full">
-		<div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-			<div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-				<img
-					src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
-					alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-					className="rounded-lg bg-gray-100"
-				/>
-				<img
-					src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
-					alt="Top down view of walnut card tray with embedded magnets and card groove."
-					className="rounded-lg bg-gray-100"
-				/>
-				<img
-					src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
-					alt="Side of walnut card tray with card groove and recessed card area."
-					className="rounded-lg bg-gray-100"
-				/>
-				<img
-					src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
-					alt="Walnut card tray filled with cards and card angled in dedicated groove."
-					className="rounded-lg bg-gray-100"
-				/>
+	<section className="bg-custom-grey h-full mt-24 mb-20 md:mt-40 md:mb-32 mx-20">
+		<div className="mx-auto grid grid-cols-4 gap-4 w-4/5">
+			<div className="col-span-4 mb-2">
+				<div className="content text-center sm:text-left">
+					<div className="title">
+						<div className="title_inner !text-xl">Blog</div>
+						<p className="text-md text-gray-400">
+							Some writings...
+						</p>
+					</div>
+				</div>
 			</div>
-			<div>
-				<h2 className="text-3xl font-bold tracking-tight text-custom-grey-light sm:text-4xl">
-					Technical Specifications
-				</h2>
 
-				<p className="mt-4 text-custom-grey-light">
-					The walnut wood card tray is precision milled to perfectly
-					fit a stack of Focus cards. The powder coated steel divider
-					separates active cards from new ones, or can be used to
-					archive important task lists.
-				</p>
+			<div className="col-span-1">
+				<Side />
+			</div>
 
-				<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-					{features.map((feature) => (
+			<div className="col-span-3">
+				<dl className="grid gap-4 ml-3">
+					{posts.map((post) => (
 						<div
-							key={feature.name}
-							className="border-t border-gray-200 pt-4"
+							key={post.name}
+							className="border-b border-custom-grey-light pb-4"
 						>
-							<dt className="font-medium text-gray-200">
-								{feature.name}
+							<dt className="font-medium text-custom-white-1">
+								{post.name}
 							</dt>
-							<dd className="mt-2 text-sm text-gray-300">
-								{feature.description}
+							<dd className="mt-1 text-sm text-gray-400 mb-0.5">
+								{post.description}
 							</dd>
+							<small className="text-gray-400">{datee}</small>
 						</div>
 					))}
 				</dl>

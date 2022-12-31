@@ -68,7 +68,9 @@ const Portfolio = () => {
 					<div className="sm:w-3/5 w-5/6 text-center">
 						<div className="content text-center sm:text-left">
 							<div className="title">
-								<div className="title_inner">Portfolio</div>
+								<div className="title_inner !text-xl">
+									Portfolio
+								</div>
 								<p className="text-md text-gray-400">
 									Here are some projects that i have worked on
 									and/or contributed to.
