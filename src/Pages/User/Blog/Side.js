@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const myCategories = [
 	{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
-	{ id: 2, slug: "curhat", name: "Curhat", is_public: false },
-	{ id: 3, slug: "other", name: "Other", is_public: true },
+	{ id: 2, slug: "life", name: "Life", is_public: true },
+	{ id: 3, slug: "love", name: "Love", is_public: false },
+	{ id: 4, slug: "other", name: "Other", is_public: true },
 ];
 
 const Side = () => {
@@ -25,14 +27,17 @@ const Side = () => {
 
 				<div className="mt-2">
 					{categories.map((category) => (
-						<div key={category.id} className="text-gray-300 mb-0.5">
-							<a href="#">
+						<Link to={"/blog/" + category.slug}>
+							<div
+								key={category.id}
+								className="text-gray-300 mb-0.5"
+							>
 								{category.name}
 								{!category.is_public && (
 									<span className="fa fa-lock ml-1"></span>
 								)}
-							</a>
-						</div>
+							</div>
+						</Link>
 					))}
 				</div>
 			</div>

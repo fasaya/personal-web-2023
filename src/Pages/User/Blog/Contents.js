@@ -7,7 +7,7 @@ const Content = ({ posts }) => {
 	return (
 		<dl className="grid gap-4 ml-3">
 			{posts.map((post) => (
-				<Link to={"/blog/" + post.slug}>
+				<Link to={"/blog/detail/" + post.slug}>
 					<div
 						key={post.name}
 						className="border-b border-custom-grey-light pb-4"
