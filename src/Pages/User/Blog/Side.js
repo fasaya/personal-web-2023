@@ -2,9 +2,9 @@ import React from "react";
 
 const Side = () => {
 	let categories = [
-		{ slug: "tutorial", name: "Tutorial" },
-		{ slug: "curhat", name: "Curhat" },
-		{ slug: "other", name: "Other" },
+		{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
+		{ id: 2, slug: "curhat", name: "Curhat", is_public: false },
+		{ id: 3, slug: "other", name: "Other", is_public: true },
 	];
 
 	return (
@@ -15,36 +15,21 @@ const Side = () => {
 			}}
 		>
 			<div className="content text-center sm:text-left">
-				<h1 className="text-custom-white-1">CATEGORIES</h1>
+				<h1 className="text-custom-white-1 underline">CATEGORIES</h1>
 
 				<div className="mt-2">
 					{categories.map((category) => (
-						<div className="text-gray-300 mb-0.5">
-							{category.name}
+						<div key={category.id} className="text-gray-300 mb-0.5">
+							<a href="#">
+								{category.name}
+								{!category.is_public && (
+									<span className="fa fa-lock ml-1"></span>
+								)}
+							</a>
 						</div>
 					))}
 				</div>
 			</div>
-			{/* <img
-				src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
-				alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-				className="rounded-lg bg-gray-100"
-			/>
-			<img
-				src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
-				alt="Top down view of walnut card tray with embedded magnets and card groove."
-				className="rounded-lg bg-gray-100"
-			/>
-			<img
-				src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
-				alt="Side of walnut card tray with card groove and recessed card area."
-				className="rounded-lg bg-gray-100"
-			/>
-			<img
-				src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
-				alt="Walnut card tray filled with cards and card angled in dedicated groove."
-				className="rounded-lg bg-gray-100"
-			/> */}
 		</div>
 	);
 };
