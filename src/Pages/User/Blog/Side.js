@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const myCategories = [
+	{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
+	{ id: 2, slug: "curhat", name: "Curhat", is_public: false },
+	{ id: 3, slug: "other", name: "Other", is_public: true },
+];
 
 const Side = () => {
-	let categories = [
-		{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
-		{ id: 2, slug: "curhat", name: "Curhat", is_public: false },
-		{ id: 3, slug: "other", name: "Other", is_public: true },
-	];
+	const [categories, setCategories] = useState(myCategories);
+
+	useEffect(() => {
+		//
+	}, []);
 
 	return (
 		<div
