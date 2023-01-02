@@ -2,7 +2,7 @@ import React from "react";
 
 const Pagination = () => {
 	return (
-		<div>
+		<>
 			<ul className="inline-flex space-x-2">
 				<li>
 					<button className="flex items-center justify-center w-10 h-10 text-custom-orange-1 transition-colors duration-150 focus:shadow-outline hover:bg-custom-white-1">
@@ -48,7 +48,7 @@ const Pagination = () => {
 					</button>
 				</li>
 			</ul>
-		</div>
+		</>
 	);
 };
 

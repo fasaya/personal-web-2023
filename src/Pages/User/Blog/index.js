@@ -1,5 +1,6 @@
 import React from "react";
 import Pagination from "../../../Components/Pagination";
+import Content from "./Content";
 import Side from "./Side";
 
 const posts = [
@@ -22,8 +23,6 @@ const posts = [
 	},
 ];
 
-let datee = new Date().toLocaleDateString();
-
 const Blog = () => (
 	<section className="bg-custom-grey h-full mt-24 mb-20 md:mt-40 md:mb-32 mx-20">
 		<div className="mx-auto grid grid-cols-4 gap-4 w-4/5">
@@ -43,24 +42,9 @@ const Blog = () => (
 			</div>
 
 			<div className="col-span-3">
-				<dl className="grid gap-4 ml-3">
-					{posts.map((post) => (
-						<div
-							key={post.name}
-							className="border-b border-custom-grey-light pb-4"
-						>
-							<dt className="font-medium text-custom-white-1">
-								{post.name}
-							</dt>
-							<dd className="mt-1 text-sm text-gray-400 mb-0.5">
-								{post.description}
-							</dd>
-							<small className="text-gray-400">{datee}</small>
-						</div>
-					))}
-				</dl>
+				<Content posts={posts} />
 
-				<div className="mt-3">
+				<div className="mt-4">
 					<Pagination />
 				</div>
 			</div>
