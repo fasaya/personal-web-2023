@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const myCategories = [
+	{ id: 5, slug: "", name: "All", is_public: true },
 	{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
 	{ id: 2, slug: "life", name: "Life", is_public: true },
 	{ id: 3, slug: "love", name: "Love", is_public: false },
@@ -27,7 +28,7 @@ const Side = () => {
 
 				<div className="mt-2">
 					{categories.map((category) => (
-						<Link to={"/blog/" + category.slug}>
+						<Link to={"/blog/" + category.slug} key={category.slug}>
 							<div
 								key={category.id}
 								className="text-gray-300 mb-0.5"

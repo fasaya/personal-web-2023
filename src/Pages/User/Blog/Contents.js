@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Content = ({ posts }) => {
+const Contents = ({ posts }) => {
 	let myDate = new Date().toLocaleDateString();
 
 	return (
 		<dl className="grid gap-4 ml-3">
 			{posts.map((post) => (
-				<Link to={"/blog/detail/" + post.slug}>
+				<Link to={"/blog/detail/" + post.slug} key={post.slug}>
 					<div
 						key={post.name}
 						className="border-b border-custom-grey-light pb-4"
@@ -26,4 +26,4 @@ const Content = ({ posts }) => {
 	);
 };
 
-export default Content;
+export default Contents;
