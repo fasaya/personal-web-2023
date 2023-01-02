@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "../../../Components/Pagination";
 import Side from "./Side";
 
 const posts = [
@@ -58,6 +59,10 @@ const Blog = () => (
 						</div>
 					))}
 				</dl>
+
+				<div className="mt-3">
+					<Pagination />
+				</div>
 			</div>
 		</div>
 	</section>
