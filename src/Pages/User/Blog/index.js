@@ -41,7 +41,7 @@ const posts = [
 
 const Blog = () => {
 	const { slug } = useParams();
-	console.log("slug", slug);
+	// console.log("slug", slug);
 
 	useEffect(() => {
 		//

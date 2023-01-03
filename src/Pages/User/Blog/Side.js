@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const myCategories = [
 	{ id: 5, slug: "", name: "All", is_public: true },
@@ -10,10 +11,17 @@ const myCategories = [
 ];
 
 const Side = () => {
-	const [categories, setCategories] = useState(myCategories);
+	const [categories, setCategories] = useState([]);
 
 	useEffect(() => {
-		//
+		axios
+			.get(process.env.REACT_APP_API_URL + "/api/categories")
+			.then((response) => {
+				// console.log("response", response.data.data);
+				if (response.status == 200) {
+					setCategories(response.data.data);
+				}
+			});
 	}, []);
 
 	return (
@@ -27,6 +35,9 @@ const Side = () => {
 				<h1 className="text-custom-white-1 underline">CATEGORIES</h1>
 
 				<div className="mt-2">
+					<Link to={"/blog"}>
+						<div className="text-gray-300 mb-0.5">All</div>
+					</Link>
 					{categories.map((category) => (
 						<Link to={"/blog/" + category.slug} key={category.slug}>
 							<div
@@ -34,9 +45,9 @@ const Side = () => {
 								className="text-gray-300 mb-0.5"
 							>
 								{category.name}
-								{!category.is_public && (
+								{/* {category.is_private && (
 									<span className="fa fa-lock ml-1"></span>
-								)}
+								)} */}
 							</div>
 						</Link>
 					))}
