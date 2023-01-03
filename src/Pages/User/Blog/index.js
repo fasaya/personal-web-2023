@@ -3,49 +3,36 @@ import Pagination from "../../../Components/Pagination";
 import Contents from "./Contents";
 import Side from "./Side";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import { API } from "../../../Constants";
 
-const posts = [
-	{
-		slug: "Origin",
-		name: "Origin",
-		description: "Designed by Good Goods, Inc.",
-	},
-	{
-		slug: "Material",
-		name: "Material",
-		description:
-			"Solid walnut base with rare earth magnets and powder coated steel card cover",
-	},
-	{
-		slug: "Dimensions",
-		name: "Dimensions",
-		description: '6.25" x 3.55" x 1.15"',
-	},
-	{
-		slug: "Finish",
-		name: "Finish",
-		description: "Hand sanded and finished with natural oil",
-	},
-	{
-		slug: "Includes",
-		name: "Includes",
-		description: "Wood card tray and 3 refill packs",
-	},
-	{
-		slug: "Considerations",
-		name: "Considerations",
-		description:
-			"Made from natural materials. Grain and color vary with each item.",
-	},
-];
+const Blog = ({}) => {
+	const { category } = useParams();
+	const [posts, setPosts] = useState([]);
 
-const Blog = () => {
-	const { slug } = useParams();
-	// console.log("slug", slug);
+	const queryParams = new URLSearchParams(window.location.search);
+	let cat = queryParams.get("category");
+	// console.log("cat", cat);
 
 	useEffect(() => {
-		//
-	}, []);
+		getPosts(cat);
+	}, [cat]);
+
+	function getPosts(category) {
+		setPosts([]);
+		axios
+			.get(API.POSTS, {
+				params: {
+					category: category,
+				},
+			})
+			.then((response) => {
+				// console.log("response", response.data.data);
+				if (response.status == 200) {
+					setPosts(response.data.data);
+				}
+			});
+	}
 
 	return (
 		<section className="bg-custom-grey h-full mt-24 mb-20 md:mt-40 md:mb-32 mx-20">

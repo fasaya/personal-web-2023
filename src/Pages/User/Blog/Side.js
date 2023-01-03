@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API } from "../../../Constants";
 
-const myCategories = [
-	{ id: 5, slug: "", name: "All", is_public: true },
-	{ id: 1, slug: "tutorials", name: "Tutorials", is_public: true },
-	{ id: 2, slug: "life", name: "Life", is_public: true },
-	{ id: 3, slug: "love", name: "Love", is_public: false },
-	{ id: 4, slug: "other", name: "Other", is_public: true },
-];
-
-const Side = () => {
+const Side = ({}) => {
 	const [categories, setCategories] = useState([]);
 
 	useEffect(() => {
-		axios
-			.get(process.env.REACT_APP_API_URL + "/api/categories")
-			.then((response) => {
-				// console.log("response", response.data.data);
-				if (response.status == 200) {
-					setCategories(response.data.data);
-				}
-			});
+		axios.get(API.CATEGORIES).then((response) => {
+			// console.log("response", response.data.data);
+			if (response.status == 200) {
+				setCategories(response.data.data);
+			}
+		});
 	}, []);
 
 	return (
@@ -39,10 +30,13 @@ const Side = () => {
 						<div className="text-gray-300 mb-0.5">All</div>
 					</Link>
 					{categories.map((category) => (
-						<Link to={"/blog/" + category.slug} key={category.slug}>
+						<Link
+							to={"/blog?category=" + category.slug}
+							key={category.slug}
+						>
 							<div
-								key={category.id}
 								className="text-gray-300 mb-0.5"
+								key={category.slug}
 							>
 								{category.name}
 								{/* {category.is_private && (
