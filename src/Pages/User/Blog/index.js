@@ -9,6 +9,7 @@ import { API } from "../../../Constants";
 const Blog = () => {
 	const location = useLocation();
 	const [posts, setPosts] = useState([]);
+	const [meta, setMeta] = useState(null);
 
 	const queryParams = new URLSearchParams(window.location.search);
 	let cat = queryParams.get("category");
@@ -19,6 +20,7 @@ const Blog = () => {
 
 	function getPosts(category) {
 		setPosts([]);
+		setMeta(null);
 		axios
 			.get(API.POSTS, {
 				params: {
@@ -26,12 +28,18 @@ const Blog = () => {
 				},
 			})
 			.then((response) => {
-				console.log("response", response.data.data);
+				console.log("response", response.data);
 				if (response.status == 200) {
 					setPosts(response.data.data);
+					setMeta(response.data.meta);
 				}
 			});
 	}
+
+	// handlePageChange = (pageNumber) => {
+	// 	setPage(pageNumber);
+	// 	// this.props.history.push(`${window.location.search}&page=${pageNumber}`);
+	// };
 
 	return (
 		<section className="bg-custom-grey h-full mt-24 mb-20 md:mt-40 md:mb-32 mx-20">
@@ -55,7 +63,7 @@ const Blog = () => {
 					<Contents posts={posts} />
 
 					<div className="mt-4">
-						<Pagination />
+						<Pagination meta={meta} setMeta={setMeta} />
 					</div>
 				</div>
 			</div>
