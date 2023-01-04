@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API } from "../Constants";
 
-const Pagination = ({ meta }) => {
+const Pagination = ({ meta, category }) => {
 	// const [links, setLinks] = useState(null);
-	console.log("meta", meta);
+	// console.log("meta", meta);
+	// console.log("category", category);
 
 	// useEffect(() => {
 	// 	setLinks(meta.links ?? null);
@@ -16,18 +18,26 @@ const Pagination = ({ meta }) => {
 					{meta.links.map(
 						(item, key) =>
 							item.url && (
-								<li key={key}>
-									<button
-										className={
-											"w-10 h-10 transition-colors duration-150 focus:shadow-outline " +
-											(item.active
-												? "text-white border border-custom-orange-1"
-												: "text-custom-orange-1 hover:bg-custom-white-1")
-										}
-									>
-										{item.label}
-									</button>
-								</li>
+								<Link
+									key={key}
+									to={
+										"/blog" +
+										item.url.replace(API.POSTS, "")
+									}
+								>
+									<li>
+										<button
+											className={
+												"w-10 h-10 transition-colors duration-150 focus:shadow-outline " +
+												(item.active
+													? "text-white border border-custom-orange-1"
+													: "text-custom-orange-1 hover:bg-custom-white-1")
+											}
+										>
+											{item.label}
+										</button>
+									</li>
+								</Link>
 							)
 					)}
 					{/* 

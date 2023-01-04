@@ -7,24 +7,27 @@ import axios from "axios";
 import { API } from "../../../Constants";
 
 const Blog = () => {
+	const queryParams = new URLSearchParams(window.location.search);
+
 	const location = useLocation();
 	const [posts, setPosts] = useState([]);
 	const [meta, setMeta] = useState(null);
 
-	const queryParams = new URLSearchParams(window.location.search);
 	let cat = queryParams.get("category");
+	let page = queryParams.get("page");
 
 	useEffect(() => {
-		getPosts(cat);
+		getPosts(cat, page);
 	}, [location]);
 
-	function getPosts(category) {
+	function getPosts(category, page = 1) {
 		setPosts([]);
 		setMeta(null);
 		axios
 			.get(API.POSTS, {
 				params: {
 					category: category,
+					page: page,
 				},
 			})
 			.then((response) => {
@@ -63,7 +66,7 @@ const Blog = () => {
 					<Contents posts={posts} />
 
 					<div className="mt-4">
-						<Pagination meta={meta} setMeta={setMeta} />
+						<Pagination meta={meta} category={cat} />
 					</div>
 				</div>
 			</div>

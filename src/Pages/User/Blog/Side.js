@@ -26,12 +26,12 @@ const Side = ({}) => {
 				<h1 className="text-custom-white-1 underline">CATEGORIES</h1>
 
 				<div className="mt-2">
-					<Link to={"/blog"}>
+					<Link to={"/blog?page=1"}>
 						<div className="text-gray-300 mb-0.5">All</div>
 					</Link>
 					{categories.map((category) => (
 						<Link
-							to={"/blog?category=" + category.slug}
+							to={"/blog?category=" + category.slug + "&page=1"}
 							key={category.slug}
 						>
 							<div
