@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../../../Components/Pagination";
 import Contents from "./Contents";
 import Side from "./Side";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { API } from "../../../Constants";
 
-const Blog = ({}) => {
-	const { category } = useParams();
+const Blog = () => {
+	const location = useLocation();
 	const [posts, setPosts] = useState([]);
 
 	const queryParams = new URLSearchParams(window.location.search);
 	let cat = queryParams.get("category");
-	// console.log("cat", cat);
 
 	useEffect(() => {
 		getPosts(cat);
-	}, [cat]);
+	}, [location]);
 
 	function getPosts(category) {
 		setPosts([]);
@@ -27,7 +26,7 @@ const Blog = ({}) => {
 				},
 			})
 			.then((response) => {
-				// console.log("response", response.data.data);
+				console.log("response", response.data.data);
 				if (response.status == 200) {
 					setPosts(response.data.data);
 				}
