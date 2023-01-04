@@ -10,6 +10,9 @@ const Contents = ({ posts }) => {
 				<Link to={"/blog/" + post.slug} key={post.slug}>
 					<div className="border-b border-custom-grey-light pb-4">
 						<dt className="font-medium text-custom-white-1">
+							{post.is_private && (
+								<span className="fa fa-lock mr-1.5 text-custom-orange-1"></span>
+							)}
 							{post.title}
 						</dt>
 						<dd className="mt-1 text-sm text-gray-400 mb-0.5">

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getNowPlayingItem } from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 import PlayingAnimation from "./PlayingAnimation";
+import { useLocation } from "react-router-dom";
 
 const SpotifyNowPlayingNew = (props) => {
 	const [isFull, setIsFull] = useState(false);
 	const [result, setResult] = useState({});
 	const [isPlaying, setIsPlaying] = useState({});
+	const location = useLocation();
 
 	function getPlaying() {
 		Promise.all([
@@ -40,7 +42,7 @@ const SpotifyNowPlayingNew = (props) => {
 
 	useEffect(() => {
 		getPlaying();
-	}, []);
+	}, [location]);
 
 	return (
 		<>

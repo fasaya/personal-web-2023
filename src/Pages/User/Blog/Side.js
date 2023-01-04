@@ -39,9 +39,6 @@ const Side = ({}) => {
 								key={category.slug}
 							>
 								{category.name}
-								{/* {category.is_private && (
-									<span className="fa fa-lock ml-1"></span>
-								)} */}
 							</div>
 						</Link>
 					))}
