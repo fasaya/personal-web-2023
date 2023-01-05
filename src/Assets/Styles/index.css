@@ -515,3 +515,10 @@ footer .copy {
 	-webkit-box-shadow: inset 0 -6px 0px #ede574;
 	-khtml-box-shadow: inset 0 -6px 0px #ede574;
 }
+
+a.btn.fill,
+.btn.fill {
+	color: #ffffff;
+	background: #f26b38;
+	border: 1px solid #f26b38;
+}

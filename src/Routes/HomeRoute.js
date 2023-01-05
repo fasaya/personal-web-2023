@@ -5,6 +5,7 @@ import BlogDetail from "../Pages/User/Blog/detail";
 import Portfolio from "../Pages/User/Portfolio";
 import NotFound from "../Pages/User/Errors/NotFound";
 import UnderDevelopment from "../Pages/User/Errors/UnderDevelopment";
+import Login from "../Pages/Admin/Auth/Login";
 
 export default function HomeRoute() {
 	return (
@@ -13,6 +14,8 @@ export default function HomeRoute() {
 			<Route path="/portfolio" element={<Portfolio />} />
 			<Route path="/blog" element={<Blog />} />
 			<Route path="/blog/:slug" element={<BlogDetail />} />
+
+			<Route path="/admin/login" element={<Login />} />
 
 			{/* <Route path="/blog" element={<UnderDevelopment />} /> */}
 			<Route path="*" element={<NotFound />} />
