@@ -37,7 +37,7 @@ const Login = () => {
 
 	useEffect(() => {
 		// console.log("jwtToken", sessionStorage.getItem("jwtToken"));
-		if (LOCAL_STORAGE.TOKEN !== null) {
+		if (sessionStorage.getItem("jwtToken") !== null) {
 			navigate("/blog");
 		}
 	}, []);
