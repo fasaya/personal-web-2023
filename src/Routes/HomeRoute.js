@@ -16,6 +16,7 @@ export default function HomeRoute() {
 			<Route path="/blog/:slug" element={<BlogDetail />} />
 
 			<Route path="/admin/login" element={<Login />} />
+			<Route path="/admin/logout" render={(props) => someFunction()} />
 
 			{/* <Route path="/blog" element={<UnderDevelopment />} /> */}
 			<Route path="*" element={<NotFound />} />

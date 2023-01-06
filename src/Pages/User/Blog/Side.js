@@ -22,7 +22,7 @@ const Side = ({}) => {
 				border: "1px solid #f26b38",
 			}}
 		>
-			<div className="content text-center sm:text-left">
+			<div className="content text-left">
 				<h1 className="text-custom-white-1 underline">CATEGORIES</h1>
 
 				<div className="mt-2">

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../../../Components/Pagination";
 import Contents from "./Contents";
 import Side from "./Side";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import { API } from "../../../Constants";
+import { API, LOCAL_STORAGE } from "../../../Constants";
 
 const Blog = () => {
 	const queryParams = new URLSearchParams(window.location.search);
@@ -13,8 +13,8 @@ const Blog = () => {
 	const [posts, setPosts] = useState([]);
 	const [meta, setMeta] = useState(null);
 
-	let cat = queryParams.get("category");
-	let page = queryParams.get("page");
+	const cat = queryParams.get("category");
+	const page = queryParams.get("page");
 
 	useEffect(() => {
 		getPosts(cat, page);
@@ -31,7 +31,7 @@ const Blog = () => {
 				},
 			})
 			.then((response) => {
-				console.log("response", response.data);
+				// console.log("response", response.data);
 				if (response.status == 200) {
 					setPosts(response.data.data);
 					setMeta(response.data.meta);
@@ -39,15 +39,10 @@ const Blog = () => {
 			});
 	}
 
-	// handlePageChange = (pageNumber) => {
-	// 	setPage(pageNumber);
-	// 	// this.props.history.push(`${window.location.search}&page=${pageNumber}`);
-	// };
-
 	return (
 		<section className="bg-custom-grey h-full mt-24 mb-20 md:mt-40 md:mb-32 mx-20">
 			<div className="mx-auto grid grid-cols-4 gap-4 w-4/5">
-				<div className="col-span-4 mb-2">
+				<div className="col-span-4">
 					<div className="content text-center sm:text-left">
 						<div className="title">
 							<div className="title_inner !text-xl">Blog</div>
@@ -59,6 +54,18 @@ const Blog = () => {
 				</div>
 
 				<div className="col-span-1">
+					{LOCAL_STORAGE.TOKEN && (
+						<Link to="/admin/blog">
+							<button
+								type="button"
+								className="btn fill mb-3"
+								style={{ width: "100%" }}
+							>
+								Create Post
+							</button>
+						</Link>
+					)}
+
 					<Side />
 				</div>
 
