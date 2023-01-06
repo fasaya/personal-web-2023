@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useLocation, matchPath } from "react-router";
+import { useLocation, matchPath, useNavigate } from "react-router";
+import { LOCAL_STORAGE } from "../../Constants";
 
 export default function Navbar() {
+	const navigate = useNavigate();
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+	console.log("nav token", sessionStorage.getItem("jwtToken"));
 	const navigation = [
 		{ name: "Home", href: "/", current: true },
 		{ name: "Portfolio", href: "/portfolio", current: false },
 		{ name: "Blog", href: "/blog", current: false },
-		// { name: "Logout", href: "/admin/logout", current: false },
 	];
 
 	const location = useLocation();
@@ -17,6 +18,13 @@ export default function Navbar() {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ");
 	}
+
+	const logout = () => {
+		console.log("klik logout");
+		// sessionStorage.setItem("jwtToken", null);
+		sessionStorage.removeItem("jwtToken");
+		navigate("/blog");
+	};
 
 	return (
 		<>
@@ -115,6 +123,16 @@ export default function Navbar() {
 											{item.name}
 										</NavLink>
 									))}
+
+									{sessionStorage.getItem("jwtToken") !==
+										null && (
+										<button
+											className="text-gray-300 hover:text-custom-orange-1 px-3 py-2 rounded-md text-sm font-medium"
+											onClick={() => logout()}
+										>
+											Logout
+										</button>
+									)}
 								</div>
 							</div>
 						</div>
@@ -147,6 +165,15 @@ export default function Navbar() {
 								{item.name}
 							</NavLink>
 						))}
+
+						{sessionStorage.getItem("jwtToken") !== null && (
+							<button
+								className="text-gray-300 hover:text-custom-orange-1 block px-3 py-2 rounded-md text-base font-medium"
+								onClick={() => logout()}
+							>
+								Logout
+							</button>
+						)}
 					</div>
 				</div>
 			</nav>

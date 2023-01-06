@@ -8,6 +8,7 @@ import { API, LOCAL_STORAGE } from "../../../Constants";
 
 const Blog = () => {
 	const queryParams = new URLSearchParams(window.location.search);
+	console.log("side token", sessionStorage.getItem("jwtToken"));
 
 	const location = useLocation();
 	const [posts, setPosts] = useState([]);
@@ -54,14 +55,14 @@ const Blog = () => {
 				</div>
 
 				<div className="col-span-1">
-					{LOCAL_STORAGE.TOKEN && (
+					{sessionStorage.getItem("jwtToken") !== null && (
 						<Link to="/admin/blog">
 							<button
 								type="button"
 								className="btn fill mb-3"
 								style={{ width: "100%" }}
 							>
-								Create Post
+								Create
 							</button>
 						</Link>
 					)}

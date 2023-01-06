@@ -1,12 +1,12 @@
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
-const REACT_APP_AUTH_DOMAIN = "";
-const REACT_APP_AUTH_CLIENT_ID = "";
-const REACT_APP_AUTH_CALLBACK_URL = "";
+// const REACT_APP_AUTH_DOMAIN = "";
+// const REACT_APP_AUTH_CLIENT_ID = "";
+// const REACT_APP_AUTH_CALLBACK_URL = "";
 
-export const LOCAL_STORAGE = {
-	TOKEN: sessionStorage.getItem("jwtToken"),
-	// REFRESH_TOKEN: `REFRESH-TOKEN`,
-};
+// export const LOCAL_STORAGE = {
+// 	TOKEN: sessionStorage.getItem("jwtToken"),
+// 	REFRESH_TOKEN: `REFRESH-TOKEN`,
+// };
 
 export const API = {
 	AUTH: {
