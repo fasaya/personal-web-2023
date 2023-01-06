@@ -9,7 +9,7 @@ export default function Navbar() {
 		{ name: "Home", href: "/", current: true },
 		{ name: "Portfolio", href: "/portfolio", current: false },
 		{ name: "Blog", href: "/blog", current: false },
-		{ name: "Logout", href: "/admin/logout", current: false },
+		// { name: "Logout", href: "/admin/logout", current: false },
 	];
 
 	const location = useLocation();
