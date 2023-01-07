@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import { useLocation, matchPath, useNavigate } from "react-router";
-import { LOCAL_STORAGE } from "../../Constants";
+import { API } from "../../Constants";
 
 export default function Navbar() {
 	const navigate = useNavigate();
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-	console.log("nav token", sessionStorage.getItem("jwtToken"));
+
 	const navigation = [
 		{ name: "Home", href: "/", current: true },
 		{ name: "Portfolio", href: "/portfolio", current: false },
@@ -20,10 +21,31 @@ export default function Navbar() {
 	}
 
 	const logout = () => {
-		console.log("klik logout");
-		// sessionStorage.setItem("jwtToken", null);
-		sessionStorage.removeItem("jwtToken");
 		navigate("/blog");
+
+		axios
+			.post(
+				API.AUTH.LOGOUT,
+				{},
+				{
+					headers: {
+						Authorization: `Bearer ${sessionStorage.getItem(
+							"jwtToken"
+						)}`,
+					},
+				}
+			)
+			.then((response) => {
+				// console.log("response", response.data.data.token);
+				if (response.status == 200 && response.data) {
+					navigate("/blog");
+				}
+			})
+			.catch((error) => {
+				alert(error);
+			});
+
+		sessionStorage.removeItem("jwtToken");
 	};
 
 	return (

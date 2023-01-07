@@ -11,6 +11,7 @@ const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 export const API = {
 	AUTH: {
 		LOGIN: `${REACT_APP_API_URL}/api/login`,
+		LOGOUT: `${REACT_APP_API_URL}/api/logout`,
 	},
 
 	POSTS: `${REACT_APP_API_URL}/api/posts`,

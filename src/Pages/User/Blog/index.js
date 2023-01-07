@@ -8,7 +8,6 @@ import { API, LOCAL_STORAGE } from "../../../Constants";
 
 const Blog = () => {
 	const queryParams = new URLSearchParams(window.location.search);
-	console.log("side token", sessionStorage.getItem("jwtToken"));
 
 	const location = useLocation();
 	const [posts, setPosts] = useState([]);

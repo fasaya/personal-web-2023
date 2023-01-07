@@ -28,10 +28,14 @@ const Login = () => {
 						response.data.data.token
 					);
 					navigate("/blog");
+				} else {
+					setIsLoading(false);
+					alert("Email or password do not match");
 				}
 			})
 			.catch((error) => {
 				setIsLoading(false);
+				alert(error);
 			});
 	};
 
