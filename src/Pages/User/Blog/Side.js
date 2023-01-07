@@ -8,7 +8,7 @@ const Side = ({}) => {
 
 	useEffect(() => {
 		axios.get(API.CATEGORIES).then((response) => {
-			console.log("response", response.data.data);
+			// console.log("response", response.data.data);
 			if (response.status == 200) {
 				setCategories(response.data.data);
 			}
