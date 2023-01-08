@@ -55,7 +55,7 @@ const Blog = () => {
 
 				<div className="col-span-1">
 					{sessionStorage.getItem("jwtToken") !== null && (
-						<Link to="/admin/blog">
+						<Link to="/blog/create">
 							<button
 								type="button"
 								className="btn fill mb-3"
