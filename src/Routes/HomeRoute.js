@@ -13,11 +13,11 @@ const HomeRoute = () => {
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/portfolio" element={<Portfolio />} />
-			<Route path="/blog" element={<Blog />} />
+			{/* <Route path="/blog" element={<Blog />} />
 			<Route path="/blog/create" element={<BlogCreate />} />
-			<Route path="/blog/:slug" element={<BlogDetail />} />
-			{/* <Route path="/blog" element={<UnderDevelopment />} />
-			<Route path="/blog/:slug" element={<UnderDevelopment />} /> */}
+			<Route path="/blog/:slug" element={<BlogDetail />} /> */}
+			<Route path="/blog" element={<UnderDevelopment />} />
+			<Route path="/blog/:slug" element={<UnderDevelopment />} />
 
 			<Route path="/admin/login" element={<Login />} />
 
