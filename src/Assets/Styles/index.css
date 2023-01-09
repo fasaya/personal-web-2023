@@ -522,3 +522,18 @@ a.btn.fill,
 	background: #f26b38;
 	border: 1px solid #f26b38;
 }
+
+/* Draft.js */
+
+.wrapper-class {
+	/* padding: 1rem; */
+	border: 1px solid #ccc;
+}
+.editor-class {
+	background-color: #ffffff;
+	/* padding: 1rem; */
+	border: 1px solid #ccc;
+}
+.toolbar-class {
+	border: 1px solid #ccc;
+}
