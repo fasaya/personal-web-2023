@@ -5,7 +5,7 @@ let portfolios = [
 	{
 		title: "Sejawat Indonesia",
 		company: "PT Sips Edutech Indonesia",
-		desc: "",
+		desc: "Website & REST API",
 		images: [
 			"/images/sejawat-1a.png",
 			"/images/sejawat-1b.png",
