@@ -3,6 +3,23 @@ import FsLightbox from "fslightbox-react";
 
 let portfolios = [
 	{
+		title: "Sejawat Indonesia",
+		company: "PT Sips Edutech Indonesia",
+		desc: "",
+		images: [
+			"/images/sejawat-1a.png",
+			"/images/sejawat-1b.png",
+			"/images/sejawat-2.png",
+			"/images/sejawat-3.png",
+			"/images/sejawat-4.png",
+			"/images/sejawat-5.png",
+			"/images/sejawat-6.png",
+			"/images/sejawat-7.png",
+			"/images/sejawat-8.png",
+		],
+		url: "https://sejawat.co.id",
+	},
+	{
 		title: "my.tfx.co.id",
 		company: "PT. Teknologi Finansial Berjangka",
 		desc: "",
