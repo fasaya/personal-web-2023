@@ -71,7 +71,7 @@ export async function getNowPlayingItem(
 	const title = song.item.name;
 
 	let playlistEndpoit = null;
-	if (song.context.type == "playlist") {
+	if (song.context && song.context.type == "playlist") {
 		playlistEndpoit = song.context.href;
 	}
 
