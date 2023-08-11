@@ -36,7 +36,8 @@ const Home = () => (
 							fontSize: "16px",
 						}}
 					>
-						<Typed strings={textLines} typeSpeed={35} loop={true} />
+						&lt;h1&gt;Web Developer&lt;/h1&gt;
+						{/* <Typed strings={textLines} typeSpeed={35} loop={true} /> */}
 					</h6>
 				</div>
 			</div>
